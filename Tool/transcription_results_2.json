@@ -1,0 +1,4530 @@
+[
+    {
+        "timestamp": 0.12116694450378418,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.12217354774475098,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.19247150421142578,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.19247150421142578,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.19347262382507324,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.19382739067077637,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.1942768096923828,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.1942768096923828,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.25183987617492676,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.25183987617492676,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.25284266471862793,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.7625396251678467,
+        "event": "pause"
+    },
+    {
+        "timestamp": 1.273165225982666,
+        "event": "pause"
+    },
+    {
+        "timestamp": 1.7928893566131592,
+        "event": "pause"
+    },
+    {
+        "timestamp": 2.3036181926727295,
+        "event": "pause"
+    },
+    {
+        "timestamp": 2.812549591064453,
+        "event": "pause"
+    },
+    {
+        "timestamp": 3.323737382888794,
+        "event": "pause"
+    },
+    {
+        "timestamp": 3.642402410507202,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.642402410507202,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.6433966159820557,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.644399404525757,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.644399404525757,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7116124629974365,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7126097679138184,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7126097679138184,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7126097679138184,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.713610887527466,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.713610887527466,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7716500759124756,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7716500759124756,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7716500759124756,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7716500759124756,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7727270126342773,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.7727270126342773,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.8323233127593994,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.8323233127593994,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.8333141803741455,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.8333141803741455,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.8333141803741455,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.8343143463134766,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.902144432067871,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.902144432067871,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.903135061264038,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.903135061264038,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.9041378498077393,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.9041378498077393,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.9615283012390137,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.962242364883423,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.962242364883423,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.963242292404175,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.963242292404175,
+        "event": "speech"
+    },
+    {
+        "timestamp": 3.964240074157715,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.032250881195068,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.032250881195068,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.0332190990448,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.0332190990448,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.0332190990448,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.0342185497283936,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.09253454208374,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.092770099639893,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.092770099639893,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.093785524368286,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.093785524368286,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.094782590866089,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.152084112167358,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.152084112167358,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.153082370758057,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.153082370758057,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.154081106185913,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.154081106185913,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.222130537033081,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.223095417022705,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.223095417022705,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.223923206329346,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.224586486816406,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.2248313426971436,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.281857252120972,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.282879590988159,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.283873081207275,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.283873081207275,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.284879684448242,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.284879684448242,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.352374076843262,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.353376865386963,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.354374408721924,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.354374408721924,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.35537314414978,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.35537314414978,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.411442518234253,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.41254448890686,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.41254448890686,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.413561820983887,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.413561820983887,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.414559364318848,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.471631765365601,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.471631765365601,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.472629070281982,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.472629070281982,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.472629070281982,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.473630666732788,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.541483163833618,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.542352914810181,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.542352914810181,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.543363094329834,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.543363094329834,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.543363094329834,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.601644515991211,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.602587938308716,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.602587938308716,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.602587938308716,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.603586912155151,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.603586912155151,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.671464204788208,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.672418117523193,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.672418117523193,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.672418117523193,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.673415899276733,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.673415899276733,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.731414556503296,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.732347726821899,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.732347726821899,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.732347726821899,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.733346700668335,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.733346700668335,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.792540788650513,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.792540788650513,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.793480396270752,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.793480396270752,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.793480396270752,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.794482469558716,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.92171835899353,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.92171835899353,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.922685861587524,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.992399215698242,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.992399215698242,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.993375301361084,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.993375301361084,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.993375301361084,
+        "event": "speech"
+    },
+    {
+        "timestamp": 4.994370222091675,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.0513834953308105,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.052389621734619,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.05338716506958,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.05338716506958,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.054382801055908,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.054382801055908,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.11293363571167,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.11293363571167,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.113948583602905,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.113948583602905,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.113948583602905,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.114949464797974,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.181319236755371,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.181319236755371,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.182319164276123,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.182319164276123,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.182319164276123,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.183565139770508,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.241850137710571,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.241850137710571,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.241850137710571,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.242850065231323,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.242850065231323,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.2438483238220215,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.3120715618133545,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.3120715618133545,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.31304931640625,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.31304931640625,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.314049005508423,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.314049005508423,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.371857166290283,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.371857166290283,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.372870683670044,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.372870683670044,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.373854160308838,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.373854160308838,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.432442665100098,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.432442665100098,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.433454751968384,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.433454751968384,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.433454751968384,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.434453725814819,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.501962900161743,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.501962900161743,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.502956867218018,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.502956867218018,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.502956867218018,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.503953456878662,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.561275005340576,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.562132835388184,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.562845706939697,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.562845706939697,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.562845706939697,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.563856840133667,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.632436275482178,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.632436275482178,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.632436275482178,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.633448839187622,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.633448839187622,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.634446144104004,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.691303253173828,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.692304611206055,
+        "event": "speech"
+    },
+    {
+        "timestamp": 5.692304611206055,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.203612327575684,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.204626083374023,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.2066121101379395,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.2076380252838135,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.208621263504028,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.272207736968994,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.273197650909424,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.274198532104492,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.274198532104492,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.275202512741089,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.276198863983154,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.331803560256958,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.332745552062988,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.332745552062988,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.333745956420898,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.334753751754761,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.334753751754761,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.392075300216675,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.393028497695923,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.3940269947052,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.3940269947052,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.3950300216674805,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.396023511886597,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.462017297744751,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.462017297744751,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.463029146194458,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.463029146194458,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.463029146194458,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.464026927947998,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.520784616470337,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.5217812061309814,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.5217812061309814,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.5227484703063965,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.5227484703063965,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.5227484703063965,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.59234356880188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.59255313873291,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.59255313873291,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.593567132949829,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.593567132949829,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.593567132949829,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.652509450912476,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.6535046100616455,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.6535046100616455,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.654496431350708,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.655494928359985,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.655494928359985,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.71294903755188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.713973760604858,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.714619159698486,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.714619159698486,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.715640544891357,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.716647386550903,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.782244443893433,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.783245325088501,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.783245325088501,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.784252882003784,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.784252882003784,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.785250186920166,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.841960430145264,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.841960430145264,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.841960430145264,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.842961549758911,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.842961549758911,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.843957424163818,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.9117560386657715,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.91221284866333,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.912822484970093,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.912822484970093,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.913837432861328,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.913837432861328,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.971263885498047,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.97222638130188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.97222638130188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.97222638130188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.973226070404053,
+        "event": "speech"
+    },
+    {
+        "timestamp": 6.973226070404053,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.032819747924805,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.033047199249268,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.033047199249268,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.034062147140503,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.034062147140503,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.035060882568359,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.101451873779297,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.102454423904419,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.102454423904419,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.103451728820801,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.103451728820801,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.104451417922974,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.162592172622681,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.162847518920898,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.162847518920898,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.163864850997925,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.163864850997925,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.164861440658569,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.232679843902588,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.233293056488037,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.233293056488037,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.234307289123535,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.234307289123535,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.235306739807129,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.292267322540283,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.292267322540283,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.293232202529907,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.293232202529907,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.294231653213501,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.294231653213501,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.351843357086182,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.352840423583984,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.352840423583984,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.353840112686157,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.353840112686157,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.354834079742432,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.421593189239502,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.422614812850952,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.423608303070068,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.423608303070068,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.424607515335083,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.424607515335083,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.482502222061157,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.483210563659668,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.483210563659668,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.48417067527771,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.48417067527771,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.485193967819214,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.552301406860352,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.553242444992065,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.553242444992065,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.554244518280029,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.55495548248291,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.55495548248291,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.611513376235962,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.6125328540802,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.613528728485107,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.613528728485107,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.614528656005859,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.614528656005859,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.672439336776733,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.672439336776733,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.673439025878906,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.673439025878906,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.6744384765625,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.6744384765625,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.74118709564209,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.742208003997803,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.743204832077026,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.743204832077026,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.744209289550781,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.744209289550781,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.802212238311768,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.803207159042358,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.803207159042358,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.804206609725952,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.804206609725952,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.805206060409546,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.872274160385132,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.872274160385132,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.873272895812988,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.873272895812988,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.874282121658325,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.875270128250122,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.932492256164551,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.932492256164551,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.933458089828491,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.933458089828491,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.934453010559082,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.934453010559082,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.992189168930054,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.9931800365448,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.9931800365448,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.994180679321289,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.994180679321289,
+        "event": "speech"
+    },
+    {
+        "timestamp": 7.9951794147491455,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.06256103515625,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.062852144241333,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.063871383666992,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.063871383666992,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.06486988067627,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.06486988067627,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.121253252029419,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.1222505569458,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.123254537582397,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.123254537582397,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.124254703521729,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.124254703521729,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.192490339279175,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.192490339279175,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.193488121032715,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.193488121032715,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.19472861289978,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.703682661056519,
+        "event": "pause"
+    },
+    {
+        "timestamp": 8.762876272201538,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.763869762420654,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.832778930664062,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.833720684051514,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.834722518920898,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.835721015930176,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.836731910705566,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.836731910705566,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.89209532737732,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.89209532737732,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.893091917037964,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.893091917037964,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.893091917037964,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.894089460372925,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.952091932296753,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.952091932296753,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.953091382980347,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.953091382980347,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.953856229782104,
+        "event": "speech"
+    },
+    {
+        "timestamp": 8.953856229782104,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.021731853485107,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.02269697189331,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.02269697189331,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.02369999885559,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.02369999885559,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.02369999885559,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.081562280654907,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.08256483078003,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.08256483078003,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.08256483078003,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.083561897277832,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.083561897277832,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.15152096748352,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.15252685546875,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.15252685546875,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.153513431549072,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.153513431549072,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.154515743255615,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.21196174621582,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.212244510650635,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.212244510650635,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.213258266448975,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.213258266448975,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.214263677597046,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.271460771560669,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.271460771560669,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.272426128387451,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.272426128387451,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.273424863815308,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.273424863815308,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.342065572738647,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.342065572738647,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.343077182769775,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.343077182769775,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.343077182769775,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.34407639503479,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.402165412902832,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.403173208236694,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.403173208236694,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.404171466827393,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.404171466827393,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.405174016952515,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.471574306488037,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.471574306488037,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.472540140151978,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.472540140151978,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.473538398742676,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.473538398742676,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.531156301498413,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.531796216964722,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.531796216964722,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.591519832611084,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.592530727386475,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.593393564224243,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.593393564224243,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.593393564224243,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.661642789840698,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.663037300109863,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.663037300109863,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.663984775543213,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.663984775543213,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.665002822875977,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.721195220947266,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.72191047668457,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.72191047668457,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.91255784034729,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.91255784034729,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.982603073120117,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.983597993850708,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.98391318321228,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.984936714172363,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.98594355583191,
+        "event": "speech"
+    },
+    {
+        "timestamp": 9.98594355583191,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.041505575180054,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.04271650314331,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.043740510940552,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.043740510940552,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.044746160507202,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.045739889144897,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.172064065933228,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.173015832901001,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.23277473449707,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.233725547790527,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.233725547790527,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.234725952148438,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.23572301864624,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.23572301864624,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.302214860916138,
+        "event": "speech"
+    },
+    {
+        "timestamp": 10.813068866729736,
+        "event": "pause"
+    },
+    {
+        "timestamp": 11.324022769927979,
+        "event": "pause"
+    },
+    {
+        "timestamp": 11.833293676376343,
+        "event": "pause"
+    },
+    {
+        "timestamp": 12.354022979736328,
+        "event": "pause"
+    },
+    {
+        "timestamp": 12.60299277305603,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.604984283447266,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.605983257293701,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.673404455184937,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.67501950263977,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.675981283187866,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.67699408531189,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.678035259246826,
+        "event": "speech"
+    },
+    {
+        "timestamp": 12.678983926773071,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.182801246643066,
+        "event": "pause"
+    },
+    {
+        "timestamp": 13.561319589614868,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.561841011047363,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.562414169311523,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.562940120697021,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.563484191894531,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.631884098052979,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.631884098052979,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.632883787155151,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.632883787155151,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.632883787155151,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.633881568908691,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.692105531692505,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.692105531692505,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.693104028701782,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.693104028701782,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.693104028701782,
+        "event": "speech"
+    },
+    {
+        "timestamp": 13.694104194641113,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.073900938034058,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.074904441833496,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.076891422271729,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.077950239181519,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.078893661499023,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.079914331436157,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.142127990722656,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.142320156097412,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.142320156097412,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.143330097198486,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.143330097198486,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.143330097198486,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.201900959014893,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.333735942840576,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.334740400314331,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.335744619369507,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.336733102798462,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.338748216629028,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.339622259140015,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.391896724700928,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.391896724700928,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.392841100692749,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.392841100692749,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.392841100692749,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.393842220306396,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.461590051651001,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.462602853775024,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.462602853775024,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.462602853775024,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.463599443435669,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.463599443435669,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.521348476409912,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.52258586883545,
+        "event": "speech"
+    },
+    {
+        "timestamp": 14.522916316986084,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.031750679016113,
+        "event": "pause"
+    },
+    {
+        "timestamp": 15.101279973983765,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.161848306655884,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.162816762924194,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.162816762924194,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.162816762924194,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.163815259933472,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.163815259933472,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.23253583908081,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.233531713485718,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.233531713485718,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.234530687332153,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.234530687332153,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.235533952713013,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.29284119606018,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.29284119606018,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.483688592910767,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.485376358032227,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.486385107040405,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.487366676330566,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.552007913589478,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.553013563156128,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.554009437561035,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.554009437561035,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.555012702941895,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.555012702941895,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.612513780593872,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.672332525253296,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.672658205032349,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.673676013946533,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.673676013946533,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.674680709838867,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.67568063735962,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.742220401763916,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.743169784545898,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.743169784545898,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.744174242019653,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.744174242019653,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.745169162750244,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.80174708366394,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.802746534347534,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.802746534347534,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.803743600845337,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.804741144180298,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.804741144180298,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.872659683227539,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.873655796051025,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.873655796051025,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.87466049194336,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.87565541267395,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.87565541267395,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.932296514511108,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.933242082595825,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.933242082595825,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.934247732162476,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.934247732162476,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.935243844985962,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.992475271224976,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.993419408798218,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.994422674179077,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.994422674179077,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.995429277420044,
+        "event": "speech"
+    },
+    {
+        "timestamp": 15.99642276763916,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.06175184249878,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.06270980834961,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.06370186805725,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.064708948135376,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.064708948135376,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.0657057762146,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.121984243392944,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.121984243392944,
+        "event": "speech"
+    },
+    {
+        "timestamp": 16.632160425186157,
+        "event": "pause"
+    },
+    {
+        "timestamp": 17.15177893638611,
+        "event": "pause"
+    },
+    {
+        "timestamp": 17.403748750686646,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.404743194580078,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.40575885772705,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.406741619110107,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.408763647079468,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.409817934036255,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.472542762756348,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.473548650741577,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.473548650741577,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.474549770355225,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.474549770355225,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.47555136680603,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.531607151031494,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.53256344795227,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.53355622291565,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.53355622291565,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.53455638885498,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.53455638885498,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.592537879943848,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.593533277511597,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.593533277511597,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.594534635543823,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.595540523529053,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.595540523529053,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.662580728530884,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.662861108779907,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.66370439529419,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.66370439529419,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.721801042556763,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.72276544570923,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.72276544570923,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.72377038002014,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.72377038002014,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.724767208099365,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.791574954986572,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.792537689208984,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.792537689208984,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.793538570404053,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.793538570404053,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.913174867630005,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.914421558380127,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.915456533432007,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.91645383834839,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.917447566986084,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.982101678848267,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.983091831207275,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.98405170440674,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.985057830810547,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.986050605773926,
+        "event": "speech"
+    },
+    {
+        "timestamp": 17.98704981803894,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.04198932647705,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.04198932647705,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.042952299118042,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.042952299118042,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.04395318031311,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.04395318031311,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.111390829086304,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.112406492233276,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.112406492233276,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.621310234069824,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.62182855606079,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.622360229492188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.622360229492188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.622907876968384,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.622907876968384,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.681403398513794,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.682408571243286,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.682408571243286,
+        "event": "speech"
+    },
+    {
+        "timestamp": 18.94366455078125,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.001912355422974,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.00291156768799,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.003915786743164,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.003915786743164,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.004909992218018,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.005910396575928,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.07287335395813,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.07287335395813,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.073873043060303,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.073873043060303,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.07505464553833,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.07505464553833,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.131290197372437,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.132288217544556,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.133291482925415,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.134296894073486,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.134296894073486,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.135287284851074,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.19188618659973,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.192850828170776,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.192850828170776,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.193855047225952,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.193855047225952,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.194846868515015,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.261269569396973,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.262365341186523,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.263103246688843,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.263856172561646,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.263856172561646,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.264880657196045,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.32187533378601,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.32187533378601,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.322836875915527,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.322836875915527,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.323832273483276,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.323832273483276,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.392588138580322,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.392588138580322,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.393587112426758,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.393587112426758,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.394591093063354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.394591093063354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.45168685913086,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.452685356140137,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.452685356140137,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.452685356140137,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.45368766784668,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.45368766784668,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.51225757598877,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.51225757598877,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.51225757598877,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.513259172439575,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.58110284805298,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.582335233688354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.582335233688354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.582335233688354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.58336067199707,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.58336067199707,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.64115595817566,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.64185929298401,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.64185929298401,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.642821550369263,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.642821550369263,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.642821550369263,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.71161198616028,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.71161198616028,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.712616205215454,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.712616205215454,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.712616205215454,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.712616205215454,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.831544876098633,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.831544876098633,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.832499027252197,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.832499027252197,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.832499027252197,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.833498001098633,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.900979042053223,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.901976108551025,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.901976108551025,
+        "event": "speech"
+    },
+    {
+        "timestamp": 19.90276861190796,
+        "event": "speech"
+    },
+    {
+        "timestamp": 20.412845849990845,
+        "event": "pause"
+    },
+    {
+        "timestamp": 20.923180103302002,
+        "event": "pause"
+    },
+    {
+        "timestamp": 21.434131860733032,
+        "event": "pause"
+    },
+    {
+        "timestamp": 21.63271188735962,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.63372254371643,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.692108869552612,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.693073749542236,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.69407820701599,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.69507646560669,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.69507646560669,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.69606852531433,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.75229549407959,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.753339767456055,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.754295349121094,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.75529432296753,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.75529432296753,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.756301164627075,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.821906805038452,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.821906805038452,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.822901964187622,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.822901964187622,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.822901964187622,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.823906421661377,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.881478786468506,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.88238787651062,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.88238787651062,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.883402585983276,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.883402585983276,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.883402585983276,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.952275037765503,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.952638864517212,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.952638864517212,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.953652143478394,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.953652143478394,
+        "event": "speech"
+    },
+    {
+        "timestamp": 21.953652143478394,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.012452602386475,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.012452602386475,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.012452602386475,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.013452529907227,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.013452529907227,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.013452529907227,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.07181191444397,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.07181191444397,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.072777271270752,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.072777271270752,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.072777271270752,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.0737726688385,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.142110109329224,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.142110109329224,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.143121480941772,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.143121480941772,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.143121480941772,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.144127368927002,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.201273918151855,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.2022762298584,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.202611207962036,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.202611207962036,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.2036235332489,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.2036235332489,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.2723228931427,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.2723228931427,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.273322343826294,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.273322343826294,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.273322343826294,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.274322986602783,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.331881046295166,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.331881046295166,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.33288049697876,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.33288049697876,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.33288049697876,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.333879709243774,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.392242908477783,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.392242908477783,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.393245220184326,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.393245220184326,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.394240140914917,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.394240140914917,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.461825609207153,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.462786436080933,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.462786436080933,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.462786436080933,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.463786363601685,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.463786363601685,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.522026777267456,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.522026777267456,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.52302885055542,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.52302885055542,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.52302885055542,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.52402901649475,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.59180521965027,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.592769622802734,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.592769622802734,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.59377121925354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.59377121925354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.59377121925354,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.65224003791809,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.653240203857422,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.653714418411255,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.653714418411255,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.6547429561615,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.655734062194824,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.712390661239624,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.71334171295166,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.71334171295166,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.714335918426514,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.71533989906311,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.71533989906311,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.782116174697876,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.783139944076538,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.783139944076538,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.78413701057434,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.785133123397827,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.785133123397827,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.842410564422607,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.84336495399475,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.843900203704834,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.843900203704834,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.844926118850708,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.845919847488403,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.912296772003174,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.913257837295532,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.914186716079712,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.914186716079712,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.915212869644165,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.91621685028076,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.972289562225342,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.973276138305664,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.973276138305664,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.974284172058105,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.97527575492859,
+        "event": "speech"
+    },
+    {
+        "timestamp": 22.97527575492859,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.032144784927368,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.033137798309326,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.034141063690186,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.034141063690186,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.03513741493225,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.036131858825684,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.101319074630737,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.10233211517334,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.10233211517334,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.10333490371704,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.10333490371704,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.10433340072632,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.161950826644897,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.16236400604248,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.163374185562134,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.163374185562134,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.16437339782715,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.16437339782715,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.231427431106567,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.23244047164917,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.23244047164917,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.233439207077026,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.233439207077026,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.233439207077026,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.291656970977783,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.292664527893066,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.293497323989868,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.294479608535767,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.29495668411255,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.29495668411255,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.35281229019165,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.35281229019165,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.353805541992188,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.354809999465942,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.354809999465942,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.355803966522217,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.42103910446167,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.42103910446167,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.422040462493896,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.422040462493896,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.422040462493896,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.422040462493896,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.48141050338745,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.482426643371582,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.482426643371582,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.482426643371582,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.483445644378662,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.48442554473877,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.552163124084473,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.552705764770508,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.552705764770508,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.553244590759277,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.553244590759277,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.553807497024536,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.610841989517212,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.61185359954834,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.61185359954834,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.61285090446472,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.61285090446472,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.61285090446472,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.670994997024536,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.671994924545288,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.671994924545288,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.672993659973145,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.672993659973145,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.672993659973145,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.741515636444092,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.742526531219482,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.74315643310547,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.74315643310547,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.74315643310547,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.74416732788086,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.802342176437378,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.803354740142822,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.804351568222046,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.805342197418213,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.806344270706177,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.806344270706177,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.87211298942566,
+        "event": "speech"
+    },
+    {
+        "timestamp": 23.873109817504883,
+        "event": "speech"
+    },
+    {
+        "timestamp": 24.382245779037476,
+        "event": "pause"
+    },
+    {
+        "timestamp": 24.89402985572815,
+        "event": "pause"
+    },
+    {
+        "timestamp": 25.402750968933105,
+        "event": "pause"
+    },
+    {
+        "timestamp": 25.914005041122437,
+        "event": "pause"
+    },
+    {
+        "timestamp": 26.43363666534424,
+        "event": "pause"
+    },
+    {
+        "timestamp": 26.682912588119507,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.68396544456482,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.685954093933105,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.752923488616943,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.75387454032898,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.75486660003662,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.755919933319092,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.7568678855896,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.7568678855896,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.812179803848267,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.813125133514404,
+        "event": "speech"
+    },
+    {
+        "timestamp": 26.814121961593628,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.13362741470337,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.13461184501648,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.192272901535034,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.193275451660156,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.19427990913391,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.19527292251587,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.196269512176514,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.196269512176514,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.261463403701782,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.262457132339478,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.262457132339478,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.263458967208862,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.263458967208862,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.26445770263672,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.321550607681274,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.3225519657135,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.3225519657135,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.32354974746704,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.32354974746704,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.324549436569214,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.39228630065918,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.393250703811646,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.393539667129517,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.393539667129517,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.394561529159546,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.394561529159546,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.451470851898193,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.452472925186157,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.452999591827393,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.452999591827393,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.454021453857422,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.454021453857422,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.51221799850464,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.51221799850464,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.513186931610107,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.513186931610107,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.51418709754944,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.51418709754944,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.581450700759888,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.582473754882812,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.583565950393677,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.583565950393677,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.58458113670349,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.58458113670349,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.641809225082397,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.641809225082397,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.642807722091675,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.642807722091675,
+        "event": "speech"
+    },
+    {
+        "timestamp": 27.643807888031006,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.152177095413208,
+        "event": "pause"
+    },
+    {
+        "timestamp": 28.54172706604004,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.54172706604004,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.54172706604004,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.54272699356079,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.54272699356079,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.54272699356079,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.601396322250366,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.602383613586426,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.603381395339966,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.603381395339966,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.603381395339966,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.60438299179077,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.67159867286682,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.67159867286682,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.6725971698761,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.6725971698761,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.673595905303955,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.673595905303955,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.731470108032227,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.73247194290161,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.73247194290161,
+        "event": "speech"
+    },
+    {
+        "timestamp": 28.733471393585205,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.24150013923645,
+        "event": "pause"
+    },
+    {
+        "timestamp": 29.63222622871399,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.633224487304688,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.691612005233765,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.692643404006958,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.692643404006958,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.692643404006958,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.6936092376709,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.6936092376709,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.75139045715332,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.752389192581177,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.752389192581177,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.75338864326477,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.75338864326477,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.75338864326477,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.82176947593689,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.82176947593689,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.82176947593689,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.822771787643433,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.82335877418518,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.82335877418518,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.88222622871399,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.88222622871399,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.883225202560425,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.883225202560425,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.883225202560425,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.883225202560425,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.951533317565918,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.952532529830933,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.952532529830933,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.953531503677368,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.953531503677368,
+        "event": "speech"
+    },
+    {
+        "timestamp": 29.953531503677368,
+        "event": "speech"
+    },
+    {
+        "timestamp": 30.012294054031372,
+        "event": "speech"
+    },
+    {
+        "timestamp": 30.012294054031372,
+        "event": "speech"
+    },
+    {
+        "timestamp": 30.012294054031372,
+        "event": "speech"
+    },
+    {
+        "timestamp": 30.01329231262207,
+        "event": "speech"
+    },
+    {
+        "timestamp": 30.01329231262207,
+        "event": "speech"
+    },
+    {
+        "timestamp": 30.01329231262207,
+        "event": "speech"
+    },
+    {
+        "timestamp": 0.0,
+        "transcription": " Thank you so much."
+    },
+    {
+        "timestamp": 7.0,
+        "transcription": " It worked."
+    },
+    {
+        "timestamp": 14.0,
+        "transcription": " I will stop this program now."
+    },
+    {
+        "timestamp": 29.0,
+        "transcription": " Thank you."
+    },
+    {
+        "timestamp": 30.0,
+        "transcription": " Thank you."
+    }
+]
