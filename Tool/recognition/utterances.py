@@ -38,6 +38,7 @@ audio = pyaudio.PyAudio()
 stop_recording = False
 
 # Function to record audio
+# Adjust the main loop to ensure it captures the first segment correctly
 def record_audio(segment_duration=30):
     global stop_recording
     stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
@@ -165,12 +166,14 @@ def detect_non_verbal(audio_filename):
         top_class = np.argmax(score)
         class_name = class_names[top_class]
         
-        if class_name == 'Laughter':
-            print(f"Laughter detected at {timestamp:.2f}s")
-            results.append({"timestamp": timestamp, "event": "laughter"})
-        elif class_name == 'Non-verbal speech':
-            print(f"Non-verbal speech detected at {timestamp:.2f}s")
-            results.append({"timestamp": timestamp, "event": "non-verbal"})
+        #print(f"YAMNet detected {class_name} at {timestamp:.2f}s with score {score[top_class]:.4f}")
+
+        if class_name != 'display_name' :
+            print(f"{class_name} detected at {timestamp:.2f}s")
+            results.append({"start_timestamp": timestamp, "end_timestamp": timestamp + 0.5, "event": class_name})
+        # elif class_name == 'Non-verbal speech':
+        #     print(f"Non-verbal speech detected at {timestamp:.2f}s")
+        #     results.append({"start_timestamp": timestamp, "end_timestamp": timestamp + 0.5, "event": "non-verbal"})
 
     return results
 
