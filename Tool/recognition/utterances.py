@@ -1,3 +1,4 @@
+# Version1: cannot detect non-verbal speech and laughter
 # import wave
 # import pyaudio
 # import whisper
@@ -26,58 +27,71 @@
 # stop_recording = False
 
 # # Function to record audio
-# def record_audio():
+# def record_audio(segment_duration=30):
 #     global stop_recording
 #     stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
-#     frames = []
-#     results = []
+#     segment_counter = 0
 
 #     print("Recording...")
-#     start_time = time.time()
-#     last_activity_time = start_time
-#     frame_duration = 0.02  # 20 ms frames
-
 #     while not stop_recording:
-#         data = stream.read(CHUNK)
-#         frames.append(data)
+#         frames = []
+#         results = []
+#         start_time = time.time()
+#         last_activity_time = start_time
+#         frame_duration = 0.02  # 20 ms frames
 
-#         # Process audio frames of 20 ms length
-#         num_frames = int(len(data) / (RATE * frame_duration))
-#         for i in range(num_frames):
-#             start = int(i * RATE * frame_duration)
-#             end = start + int(RATE * frame_duration)
-#             frame = data[start:end]
+#         while time.time() - start_time < segment_duration:
+#             data = stream.read(CHUNK)
+#             frames.append(data)
 
-#             if len(frame) != int(RATE * frame_duration):
-#                 continue  # Skip if the frame length is not exactly 20 ms
+#             # Process audio frames of 20 ms length
+#             num_frames = int(len(data) / (RATE * frame_duration))
+#             for i in range(num_frames):
+#                 start = int(i * RATE * frame_duration)
+#                 end = start + int(RATE * frame_duration)
+#                 frame = data[start:end]
 
-#             is_speech = vad.is_speech(frame, RATE)
-#             current_time = time.time() - start_time
-#             if is_speech:
-#                 print(f"Speech detected at {current_time:.2f}s")
-#                 last_activity_time = time.time()
-#                 results.append({"timestamp": current_time, "event": "speech"})
-#             else:
-#                 # Detect pauses (silence longer than a threshold, e.g., 0.5 seconds)
-#                 if time.time() - last_activity_time > 0.5:
-#                     print(f"Pause detected at {current_time:.2f}s")
-#                     last_activity_time = time.time()  # Reset the last activity time
-#                     results.append({"timestamp": current_time, "event": "pause"})
+#                 if len(frame) != int(RATE * frame_duration):
+#                     continue  # Skip if the frame length is not exactly 20 ms
 
-#         # Break on specific key or condition
-#         if time.time() - start_time > 30:  # Stop after 60 seconds
-#             stop_recording = False
-#             break
+#                 is_speech = vad.is_speech(frame, RATE)
+#                 current_time = time.time() - start_time
+#                 if is_speech:
+#                     print(f"Speech detected at {current_time:.2f}s")
+#                     last_activity_time = time.time()
+#                     results.append({"timestamp": current_time, "event": "speech"})
+#                 else:
+#                     # Detect pauses (silence longer than a threshold, e.g., 0.5 seconds)
+#                     if time.time() - last_activity_time > 0.5:
+#                         print(f"Pause detected at {current_time:.2f}s")
+#                         last_activity_time = time.time()  # Reset the last activity time
+#                         results.append({"timestamp": current_time, "event": "pause"})
+
+#         # Save the current audio segment
+#         segment_filename = f"segment_{segment_counter}.wav"
+#         save_audio(frames, RATE, segment_filename)
+#         segment_counter += 1
+
+#         # Transcribe the current audio segment
+#         transcription_result = transcribe_audio(segment_filename)
+#         print("Transcription:")
+#         for segment in transcription_result['segments']:
+#             print(f"[{segment['start']:.2f}s - {segment['end']:.2f}s]: {segment['text']}")
+#             results.append({"timestamp": segment['start'], "transcription": segment['text']})
+
+#         # Save transcription results to a JSON file
+#         json_filename = f"transcription_results_{segment_counter}.json"
+#         with open(json_filename, "w") as f:
+#             json.dump(results, f, indent=4)
+
+#         print(f"Results saved to {json_filename}")
 
 #     print("Recording stopped.")
-
 #     stream.stop_stream()
 #     stream.close()
 
-#     return frames, results
-
 # # Function to save audio to a file
-# def save_audio(frames, rate, output_filename="output.wav"):
+# def save_audio(frames, rate, output_filename):
 #     wf = wave.open(output_filename, 'wb')
 #     wf.setnchannels(CHANNELS)
 #     wf.setsampwidth(audio.get_sample_size(FORMAT))
@@ -106,25 +120,13 @@
 #         stop_recording = True
 #         record_thread.join()
 
-#     frames, results = record_audio()
-#     save_audio(frames, RATE)
-
-#     result = transcribe_audio("output.wav")
-
-#     # Print the transcription with timestamps
-#     for segment in result['segments']:
-#         print(f"[{segment['start']:.2f}s - {segment['end']:.2f}s]: {segment['text']}")
-#         results.append({"timestamp": segment['start'], "transcription": segment['text']})
-
-#     # Save results to a JSON file
-#     with open("transcription_results.json", "w") as f:
-#         json.dump(results, f, indent=4)
-
-#     print("Results saved to transcription_results.json")
+#     audio.terminate()
 
 # if __name__ == "__main__":
 #     main()
 
+
+#version2:
 import wave
 import pyaudio
 import whisper
@@ -132,6 +134,10 @@ import webrtcvad
 import time
 import json
 import threading
+import tensorflow as tf
+import tensorflow_hub as hub
+import numpy as np
+import pandas as pd
 
 # Initialize Whisper model
 model = whisper.load_model("base")
@@ -139,6 +145,14 @@ model = whisper.load_model("base")
 # Initialize WebRTC VAD
 vad = webrtcvad.Vad()
 vad.set_mode(1)
+
+# Initialize YAMNet model from TensorFlow Hub
+yamnet_model = hub.load('https://tfhub.dev/google/yamnet/1')
+
+# Load class map
+class_map_path = r"D://HCI_Research//GenderTool//Tool//recognition//yamnet_class_map.csv"
+df = pd.read_csv(class_map_path, header=None)
+class_names = df[2].values
 
 # Audio recording parameters
 FORMAT = pyaudio.paInt16
@@ -205,6 +219,10 @@ def record_audio(segment_duration=30):
             print(f"[{segment['start']:.2f}s - {segment['end']:.2f}s]: {segment['text']}")
             results.append({"timestamp": segment['start'], "transcription": segment['text']})
 
+        # Detect non-verbal sounds (e.g., laughter) in the segment
+        non_verbal_results = detect_non_verbal(segment_filename)
+        results.extend(non_verbal_results)
+
         # Save transcription results to a JSON file
         json_filename = f"transcription_results_{segment_counter}.json"
         with open(json_filename, "w") as f:
@@ -229,6 +247,31 @@ def save_audio(frames, rate, output_filename):
 def transcribe_audio(audio_filename):
     result = model.transcribe(audio_filename)
     return result
+
+# Function to detect non-verbal sounds (e.g., laughter) using YAMNet
+def detect_non_verbal(audio_filename):
+    results = []
+
+    # Load the audio file and ensure it's mono-channel
+    wav_data = tf.audio.decode_wav(tf.io.read_file(audio_filename), desired_channels=1)
+    waveform = wav_data.audio
+
+    # Predict using YAMNet
+    scores, embeddings, spectrogram = yamnet_model(waveform)
+
+    # Analyze the scores to detect laughter or other non-verbal sounds
+    for i, score in enumerate(scores):
+        timestamp = i * 0.5  # Assuming 0.5s per score segment
+        top_class = np.argmax(score)
+        class_name = class_names[top_class]
+        if class_name == 'Laughter':
+            print(f"Laughter detected at {timestamp:.2f}s")
+            results.append({"timestamp": timestamp, "event": "laughter"})
+        elif class_name == 'Non-verbal speech':
+            print(f"Non-verbal speech detected at {timestamp:.2f}s")
+            results.append({"timestamp": timestamp, "event": "non-verbal speech"})
+
+    return results
 
 # Main function
 def main():
