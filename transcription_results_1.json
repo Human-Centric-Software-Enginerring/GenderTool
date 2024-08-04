@@ -1,0 +1,57 @@
+[
+    {
+        "start_timestamp": 18.69863772392273,
+        "end_timestamp": 18.900405883789062,
+        "event": "pause"
+    },
+    {
+        "start_timestamp": 21.649641752243042,
+        "end_timestamp": 21.778430461883545,
+        "event": "pause"
+    },
+    {
+        "start_timestamp": 23.568596601486206,
+        "end_timestamp": 23.628418445587158,
+        "event": "pause"
+    },
+    {
+        "start_timestamp": 27.917612314224243,
+        "end_timestamp": 28.23876166343689,
+        "event": "pause"
+    },
+    {
+        "start_timestamp": 29.069377422332764,
+        "end_timestamp": 29.78056573867798,
+        "event": "pause"
+    },
+    {
+        "start_timestamp": 0.0,
+        "end_timestamp": 7.72,
+        "event": "speech",
+        "transcription": " Hello, I'm Manali and I'm working on a code. That's a gender tool. It's written in Python."
+    },
+    {
+        "start_timestamp": 7.72,
+        "end_timestamp": 13.88,
+        "event": "speech",
+        "transcription": " Human-confer interaction research. Can you move the file to another directory?"
+    },
+    {
+        "start_timestamp": 13.88,
+        "end_timestamp": 17.16,
+        "event": "speech",
+        "transcription": " Yes, that one. Can you add a variable there?"
+    },
+    {
+        "start_timestamp": 17.16,
+        "end_timestamp": 28.04,
+        "event": "speech",
+        "transcription": " Right. Understand."
+    },
+    {
+        "start_timestamp": 28.04,
+        "end_timestamp": 30.04,
+        "event": "speech",
+        "transcription": " Yup."
+    }
+]
