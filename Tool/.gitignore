@@ -1,2 +1,5 @@
 *.json
 *.wav
+config.py
+__pycache__
+

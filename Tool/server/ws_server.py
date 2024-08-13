@@ -3,10 +3,11 @@ import websockets
 import json
 from pymongo import MongoClient
 from datetime import datetime
+from config import MONGO_URI
 
 # MongoDB Connection
 try:
-    client = MongoClient("mongodb+srv://manali0210:TrBaO7bfGRxSFzyy@cluster0.pjfepaj.mongodb.net/")
+    client = MongoClient(MONGO_URI)
     db = client["websocket_sessions"]
     print("Database connection successful")
 except Exception as e:

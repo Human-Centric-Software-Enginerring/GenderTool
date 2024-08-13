@@ -57,7 +57,7 @@ def main():
         print("Failed to obtain device ID.")
         return
 
-    session_id = "001"
+    session_id = "002"
     asyncio.get_event_loop().run_until_complete(connect_to_server(device_id, session_id))
 
 if __name__ == "__main__":
