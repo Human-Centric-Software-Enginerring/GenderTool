@@ -1,4 +1,4 @@
-# Human-Centric-SE-Lab VSCode Extension README
+# VSCode Extension README
 
  ## Getting Started
 1. run command "npm install"

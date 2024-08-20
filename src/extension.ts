@@ -65,7 +65,7 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
         <div class="stat-row">
             <span class="arrow">→</span>
             <span class="stat-label">Lines of Code</span>
-            <span class="stat-value" id="linesOfCode">##</span>
+            <span class="stat-value" id="linesOfCode">0</span>
         </div>
         <div class="stat-row">
             <span class="arrow">→</span>
@@ -86,8 +86,8 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
             <div class="toggle-container">
                 <input id="communicationStyleToggle" type="checkbox" class="toggle-input">
                 <label for="communicationStyleToggle" class="toggle-label">
-                    <span class="toggle-text left">VISUAL</span>
-                    <span class="toggle-text right">NONVISUAL</span>
+                    <span class="toggle-text left">VERBAL</span>
+                    <span class="toggle-text right">NONVERBAL</span>
                 </label>
             </div>
         </div>
@@ -105,7 +105,7 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
         </div>
         <div class="stat-row">
             <span class="arrow">→</span>
-            <span class="stat-label">Count of You Interrupting Partner</span>
+            <span class="stat-label">Your Interruptions</span>
             <span class="stat-value" id="interruptionCount">##</span>
         </div>
         <div id="popup" class="popup">
@@ -115,6 +115,38 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
                 <p id="popupText"></p>
                 <p class="why-link">Why?</p>
                 <p class="click-info">Clicking on the above will open a browser link.</p>
+            </div>
+        </div>
+
+        <h1>PARTNER'S STATS</h1>
+        <hr>
+        <div class="stat-row">
+            <span class="arrow">→</span>
+            <span class="stat-label">Lines of Code</span>
+            <span class="stat-value" id="linesOfCode2">0</span>
+        </div>
+        <div class="stat-row">
+            <span class="arrow">→</span>
+            <span class="stat-label">Primary Contribution</span>
+            <span class="info-icon" id="primaryContributionInfo">ⓘ</span>
+            <div class="toggle-container">
+                <input id="primaryContributionToggle2" type="checkbox" class="toggle-input">
+                <label for="primaryContributionToggle2" class="toggle-label">
+                    <span class="toggle-text left">DRIVER</span>
+                    <span class="toggle-text right">NAVIGATOR</span>
+                </label>
+            </div>
+        </div>
+        <div class="stat-row">
+            <span class="arrow">→</span>
+            <span class="stat-label">Communication Style</span>
+            <span class="info-icon" id="communicationStyleInfo">ⓘ</span>
+            <div class="toggle-container">
+                <input id="communicationStyleToggle2" type="checkbox" class="toggle-input">
+                <label for="communicationStyleToggle2" class="toggle-label">
+                    <span class="toggle-text left">VERBAL</span>
+                    <span class="toggle-text right">NONVERBAL</span>
+                </label>
             </div>
         </div>
         <script nonce="${nonce}" src="${scriptUri}"></script>
