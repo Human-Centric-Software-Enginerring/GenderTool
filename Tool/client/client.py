@@ -45,9 +45,17 @@ async def connect_to_server(device_id, session_id):
         await websocket.send(json.dumps(data))
         print("Device ID and Session ID sent to server")
         
-        # Await response from the server
         response = await websocket.recv()
         print(f"Response from server: {response}")
+
+        # Parse the JSON response
+        parsed_response = json.loads(response)
+
+        # Extract and store the user_id
+        user_id = parsed_response.get("user_id")
+
+        # Now, you can use the user_id variable later in your script
+        print(f"Stored user_id: {user_id}")
 
 def main():
     device_id = get_device_id()
@@ -57,7 +65,7 @@ def main():
         print("Failed to obtain device ID.")
         return
 
-    session_id = "002"
+    session_id = "001" #will take session_id from user
     asyncio.get_event_loop().run_until_complete(connect_to_server(device_id, session_id))
 
 if __name__ == "__main__":

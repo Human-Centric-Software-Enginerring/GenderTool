@@ -9,6 +9,7 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
 import pandas as pd
+import os
 
 # Initialize Whisper model
 model = whisper.load_model("base")
@@ -38,95 +39,95 @@ audio = pyaudio.PyAudio()
 stop_recording = False
 
 # Function to record audio
-# Adjust the main loop to ensure it captures the first segment correctly
-def record_audio(segment_duration=30):
+def record_audio(duration=300):  # 5 minutes in seconds
     global stop_recording
     stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
-    segment_counter = 0
+    frames = []
+    results = []
+    start_time = time.time()
 
     print("Recording...")
     while not stop_recording:
-        frames = []
-        results = []
-        start_time = time.time()
-        last_activity_time = start_time
-        last_pause_start = None
-        frame_duration = 0.02  # 20 ms frames
+        data = stream.read(CHUNK)
+        frames.append(data)
 
-        while time.time() - start_time < segment_duration:
-            data = stream.read(CHUNK)
-            frames.append(data)
+        # Process audio frames of 20 ms length
+        num_frames = int(len(data) / (RATE * 0.02))
+        for i in range(num_frames):
+            start = int(i * RATE * 0.02)
+            end = start + int(RATE * 0.02)
+            frame = data[start:end]
 
-            # Process audio frames of 20 ms length
-            num_frames = int(len(data) / (RATE * frame_duration))
-            for i in range(num_frames):
-                start = int(i * RATE * frame_duration)
-                end = start + int(RATE * frame_duration)
-                frame = data[start:end]
+            if len(frame) != int(RATE * 0.02):
+                continue  # Skip if the frame length is not exactly 20 ms
 
-                if len(frame) != int(RATE * frame_duration):
-                    continue  # Skip if the frame length is not exactly 20 ms
+            is_speech = vad.is_speech(frame, RATE)
+            current_time = time.time() - start_time
+            if is_speech:
+                print(f"Speech detected at {current_time:.2f}s")
+                last_activity_time = time.time()
+                if 'last_pause_start' in locals():
+                    # Record the pause
+                    results.append({
+                        "start_timestamp": last_pause_start,
+                        "end_timestamp": current_time,
+                        "event": "pause"
+                    })
+                    del last_pause_start
+            else:
+                # Detect pauses (silence longer than a threshold, e.g., 0.5 seconds)
+                if 'last_activity_time' in locals() and time.time() - last_activity_time > 0.5:
+                    if 'last_pause_start' not in locals():
+                        last_pause_start = current_time  # Mark the start of the pause
 
-                is_speech = vad.is_speech(frame, RATE)
-                current_time = time.time() - start_time
-                if is_speech:
-                    print(f"Speech detected at {current_time:.2f}s")
-                    last_activity_time = time.time()
-                    if last_pause_start is not None:
-                        # Record the pause
-                        pause_end_time = current_time
-                        results.append({
-                            "start_timestamp": last_pause_start,
-                            "end_timestamp": pause_end_time,
-                            "event": "pause"
-                        })
-                        last_pause_start = None
-                else:
-                    # Detect pauses (silence longer than a threshold, e.g., 0.5 seconds)
-                    if time.time() - last_activity_time > 0.5:
-                        if last_pause_start is None:
-                            last_pause_start = current_time  # Mark the start of the pause
+        # Check if 5 minutes have passed
+        if time.time() - start_time >= duration:
+            break
 
-        # Handle case where recording ends and there was an ongoing pause
-        if last_pause_start is not None:
-            pause_end_time = time.time() - start_time
+    # Handle case where recording ends and there was an ongoing pause
+    if 'last_pause_start' in locals():
+        results.append({
+            "start_timestamp": last_pause_start,
+            "end_timestamp": time.time() - start_time,
+            "event": "pause"
+        })
+
+    # Save the current audio segment
+    segment_filename = "full_recording.wav"
+    save_audio(frames, RATE, segment_filename)
+
+    # Transcribe the audio
+    transcription_result = transcribe_audio(segment_filename)
+    for segment in transcription_result['segments']:
+        if segment['text'].strip():  # Only include if there's actual transcription
             results.append({
-                "start_timestamp": last_pause_start,
-                "end_timestamp": pause_end_time,
-                "event": "pause"
+                "start_timestamp": segment['start'],
+                "end_timestamp": segment['end'],
+                "event": "speech",
+                "transcription": segment['text']
             })
 
-        # Save the current audio segment
-        segment_filename = f"segment_{segment_counter}.wav"
-        save_audio(frames, RATE, segment_filename)
-        segment_counter += 1
+    # Detect non-verbal sounds in the segment
+    non_verbal_results = detect_non_verbal(segment_filename)
+    results.extend(non_verbal_results)
 
-        # Transcribe the current audio segment
-        transcription_result = transcribe_audio(segment_filename)
-        for segment in transcription_result['segments']:
-            if segment['text'].strip():  # Only include if there's actual transcription
-                print(f"[{segment['start']:.2f}s - {segment['end']:.2f}s]: {segment['text']}")
-                results.append({
-                    "start_timestamp": segment['start'],
-                    "end_timestamp": segment['end'],
-                    "event": "speech",
-                    "transcription": segment['text']
-                })
+    # Sort results by start_timestamp (which should be float)
+    results.sort(key=lambda x: x['start_timestamp'])
 
-        # Detect non-verbal sounds (e.g., laughter) in the segment
-        non_verbal_results = detect_non_verbal(segment_filename)
-        results.extend(non_verbal_results)
+    # Save results to a JSON file
+    json_filename = "utterance_data.json"
+    with open(json_filename, "w") as f:
+        json.dump(results, f, indent=4)
 
-        # Save transcription results to a JSON file
-        json_filename = f"transcription_results_{segment_counter}.json"
-        with open(json_filename, "w") as f:
-            json.dump(results, f, indent=4)
+    print(f"Results saved to {json_filename}")
 
-        print(f"Results saved to {json_filename}")
+    # Remove the audio file after transcription
+    os.remove(segment_filename)
+    print(f"Deleted {segment_filename}")
 
-    print("Recording stopped.")
     stream.stop_stream()
     stream.close()
+
 
 # Function to save audio to a file
 def save_audio(frames, rate, output_filename):
@@ -142,38 +143,29 @@ def transcribe_audio(audio_filename):
     result = model.transcribe(audio_filename)
     return result
 
-# Function to detect non-verbal sounds (e.g., laughter) using YAMNet
+# Function to detect non-verbal sounds using YAMNet
 def detect_non_verbal(audio_filename):
     results = []
-
-    # Load the audio file and ensure it's mono-channel
     wav_data = tf.audio.decode_wav(tf.io.read_file(audio_filename), desired_channels=1)
     waveform = wav_data.audio
 
-    # Ensure waveform is 1D and reshape if necessary
     if len(waveform.shape) > 1:
         waveform = tf.squeeze(waveform, axis=-1)
     
-    # Convert to float32 and normalize if needed
     waveform = tf.cast(waveform, tf.float32)
-    
-    # Predict using YAMNet
     scores, embeddings, spectrogram = yamnet_model(waveform)
 
-    # Analyze the scores to detect laughter or other non-verbal sounds
     for i, score in enumerate(scores):
         timestamp = i * 0.5  # Assuming 0.5s per score segment
         top_class = np.argmax(score)
         class_name = class_names[top_class]
-        
-        #print(f"YAMNet detected {class_name} at {timestamp:.2f}s with score {score[top_class]:.4f}")
 
-        if class_name != 'display_name' :
-            print(f"{class_name} detected at {timestamp:.2f}s")
-            results.append({"start_timestamp": timestamp, "end_timestamp": timestamp + 0.5, "event": class_name})
-        # elif class_name == 'Non-verbal speech':
-        #     print(f"Non-verbal speech detected at {timestamp:.2f}s")
-        #     results.append({"start_timestamp": timestamp, "end_timestamp": timestamp + 0.5, "event": "non-verbal"})
+        if class_name != 'display_name':
+            results.append({
+                "start_timestamp": f"{timestamp:.2f} sec",
+                "end_timestamp": f"{timestamp + 0.5:.2f} sec",
+                "event": class_name
+            })
 
     return results
 
