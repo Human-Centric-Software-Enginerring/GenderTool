@@ -39,7 +39,7 @@ audio = pyaudio.PyAudio()
 stop_recording = False
 
 # Function to record audio
-def record_audio(duration=300):  # 5 minutes in seconds
+def record_audio(duration=30):  # 5 minutes in seconds
     global stop_recording
     stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
     frames = []
@@ -48,47 +48,50 @@ def record_audio(duration=300):  # 5 minutes in seconds
 
     print("Recording...")
     while not stop_recording:
-        data = stream.read(CHUNK)
-        frames.append(data)
+        try:
+            data = stream.read(CHUNK)
+            frames.append(data)
 
-        # Process audio frames of 20 ms length
-        num_frames = int(len(data) / (RATE * 0.02))
-        for i in range(num_frames):
-            start = int(i * RATE * 0.02)
-            end = start + int(RATE * 0.02)
-            frame = data[start:end]
+            # Process audio frames of 20 ms length
+            num_frames = int(len(data) / (RATE * 0.02))
+            for i in range(num_frames):
+                start = int(i * RATE * 0.02)
+                end = start + int(RATE * 0.02)
+                frame = data[start:end]
 
-            if len(frame) != int(RATE * 0.02):
-                continue  # Skip if the frame length is not exactly 20 ms
+                if len(frame) != int(RATE * 0.02):
+                    continue  # Skip if the frame length is not exactly 20 ms
 
-            is_speech = vad.is_speech(frame, RATE)
-            current_time = time.time() - start_time
-            if is_speech:
-                print(f"Speech detected at {current_time:.2f}s")
-                last_activity_time = time.time()
-                if 'last_pause_start' in locals():
-                    # Record the pause
-                    results.append({
-                        "start_timestamp": last_pause_start,
-                        "end_timestamp": current_time,
-                        "event": "pause"
-                    })
-                    del last_pause_start
-            else:
-                # Detect pauses (silence longer than a threshold, e.g., 0.5 seconds)
-                if 'last_activity_time' in locals() and time.time() - last_activity_time > 0.5:
-                    if 'last_pause_start' not in locals():
-                        last_pause_start = current_time  # Mark the start of the pause
+                is_speech = vad.is_speech(frame, RATE)
+                current_time = time.time() - start_time
+                if is_speech:
+                    print(f"Speech detected at {current_time:.2f}s")
+                    last_activity_time = time.time()
+                    if 'last_pause_start' in locals():
+                        # Record the pause
+                        results.append({
+                            "start_timestamp": round(last_pause_start, 2),
+                            "end_timestamp": round(current_time, 2),
+                            "event": "pause"
+                        })
+                        del last_pause_start
+                else:
+                    # Detect pauses (silence longer than a threshold, e.g., 0.5 seconds)
+                    if 'last_activity_time' in locals() and time.time() - last_activity_time > 0.5:
+                        if 'last_pause_start' not in locals():
+                            last_pause_start = current_time  # Mark the start of the pause
 
-        # Check if 5 minutes have passed
-        if time.time() - start_time >= duration:
-            break
+            # Check if 5 minutes have passed
+            if time.time() - start_time >= duration:
+                break
+        except Exception as e:
+            print(f"Exception occurred in recording thread: {e}")
 
     # Handle case where recording ends and there was an ongoing pause
     if 'last_pause_start' in locals():
         results.append({
-            "start_timestamp": last_pause_start,
-            "end_timestamp": time.time() - start_time,
+            "start_timestamp": round(last_pause_start, 2),
+            "end_timestamp": round(time.time() - start_time, 2),
             "event": "pause"
         })
 
@@ -96,13 +99,21 @@ def record_audio(duration=300):  # 5 minutes in seconds
     segment_filename = "full_recording.wav"
     save_audio(frames, RATE, segment_filename)
 
+    # Measure time for transcription
+    transcription_start_time = time.time()
+    
     # Transcribe the audio
     transcription_result = transcribe_audio(segment_filename)
+    
+    transcription_end_time = time.time()
+    transcription_duration = transcription_end_time - transcription_start_time
+    print(f"Transcription completed in {transcription_duration:.2f} seconds")
+
     for segment in transcription_result['segments']:
         if segment['text'].strip():  # Only include if there's actual transcription
             results.append({
-                "start_timestamp": segment['start'],
-                "end_timestamp": segment['end'],
+                "start_timestamp": round(segment['start'], 2),
+                "end_timestamp": round(segment['end'], 2),
                 "event": "speech",
                 "transcription": segment['text']
             })
@@ -112,6 +123,7 @@ def record_audio(duration=300):  # 5 minutes in seconds
     results.extend(non_verbal_results)
 
     # Sort results by start_timestamp (which should be float)
+    print(results)
     results.sort(key=lambda x: x['start_timestamp'])
 
     # Save results to a JSON file
@@ -127,7 +139,6 @@ def record_audio(duration=300):  # 5 minutes in seconds
 
     stream.stop_stream()
     stream.close()
-
 
 # Function to save audio to a file
 def save_audio(frames, rate, output_filename):
@@ -162,8 +173,8 @@ def detect_non_verbal(audio_filename):
 
         if class_name != 'display_name':
             results.append({
-                "start_timestamp": f"{timestamp:.2f} sec",
-                "end_timestamp": f"{timestamp + 0.5:.2f} sec",
+                "start_timestamp": round(timestamp, 2),
+                "end_timestamp": round(timestamp + 0.5, 2),
                 "event": class_name
             })
 
