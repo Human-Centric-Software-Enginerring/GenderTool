@@ -19,7 +19,7 @@ class FaceDetection:
         try:
             while self.running:
                 # Check if 5 minutes have passed
-                if time.time() - start_time > 300:
+                if time.time() - start_time > 30:
                     break
 
                 # Read each frame from the video stream
@@ -106,7 +106,7 @@ if __name__ == "__main__":
         # Wait for the detection to finish automatically
         detection_thread.join()
         emotions = face_detection.collect()
-        print(f"Collected emotions: {emotions}")
+        #print(f"Collected emotions: {emotions}")
         face_detection.save_to_file()  # Save emotions to file
     
     except KeyboardInterrupt:

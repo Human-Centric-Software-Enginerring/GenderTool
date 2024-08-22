@@ -123,7 +123,7 @@ def record_audio(duration=30):  # 5 minutes in seconds
     results.extend(non_verbal_results)
 
     # Sort results by start_timestamp (which should be float)
-    print(results)
+    #print(results)
     results.sort(key=lambda x: x['start_timestamp'])
 
     # Save results to a JSON file

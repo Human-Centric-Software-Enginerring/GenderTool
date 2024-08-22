@@ -28,7 +28,7 @@ def save_data_to_file():
 keyboard.on_press(count_newline)
 
 # Set a timer to stop data collection after 5 minutes (300 seconds)
-timer = Timer(300, stop_collection)
+timer = Timer(30, stop_collection)
 timer.start()
 
 # Keep the program running until `stop_program` is True
@@ -36,6 +36,6 @@ while not stop_program:
     time.sleep(1)
 
 # Save the data when the program ends
-print(f"Lines of code typed: {line_count}")
+#print(f"Lines of code typed: {line_count}")
 save_data_to_file()
 

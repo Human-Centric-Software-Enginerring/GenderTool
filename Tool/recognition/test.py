@@ -752,4 +752,3 @@ with open("test.json", 'w') as file:
     # Convert the sorted events list to a JSON formatted string and write it to the file
     json.dump(sorted_events, file, indent=4)
 
-

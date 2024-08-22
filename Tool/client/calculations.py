@@ -41,7 +41,8 @@ def interruptions(utterances1,utterances2):
 
     return user1_interruptions, user2_interruptions
 
-def rapport_making(s1):
+def rapport_score(s1):
+    
     return
 
 #to-do
