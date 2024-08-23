@@ -54,7 +54,7 @@
                 text = hoverInfo[type][state];
                 break;
             case 'communicationStyle':
-                state = toggle.checked ? 'verbal' : 'nonverbal';
+                state = toggle.checked ? 'nonVerbal' : 'verbal';
                 text = hoverInfo[type][state];
                 break;
             case 'partnerTrying':
