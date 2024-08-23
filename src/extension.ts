@@ -64,13 +64,12 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
         <hr>
         <div class="stat-row">
             <span class="arrow">→</span>
-            <span class="stat-label">Lines of Code</span>
-            <span class="stat-value" id="linesOfCode">0</span>
+            <span class="stat-label">Lines of Code<span class="info-icon" id="linesOfCodeInfo">ⓘ</span></span>
+            <span class="stat-value" id="linesOfCode">##</span>
         </div>
         <div class="stat-row">
             <span class="arrow">→</span>
-            <span class="stat-label">Primary Contribution</span>
-            <span class="info-icon" id="primaryContributionInfo">ⓘ</span>
+            <span class="stat-label">Primary Contribution<span class="info-icon" id="primaryContributionInfo">ⓘ</span></span>
             <div class="toggle-container">
                 <input id="primaryContributionToggle" type="checkbox" class="toggle-input">
                 <label for="primaryContributionToggle" class="toggle-label">
@@ -81,8 +80,7 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
         </div>
         <div class="stat-row">
             <span class="arrow">→</span>
-            <span class="stat-label">Communication Style</span>
-            <span class="info-icon" id="communicationStyleInfo">ⓘ</span>
+            <span class="stat-label">Communication Style<span class="info-icon" id="communicationStyleInfo">ⓘ</span></span>
             <div class="toggle-container">
                 <input id="communicationStyleToggle" type="checkbox" class="toggle-input">
                 <label for="communicationStyleToggle" class="toggle-label">
@@ -93,8 +91,7 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
         </div>
         <div class="stat-row">
             <span class="arrow">→</span>
-            <span class="stat-label">Partner is trying to be</span>
-            <span class="info-icon" id="partnerTryingInfo">ⓘ</span>
+            <span class="stat-label">Partner is trying to be<span class="info-icon" id="partnerTryingInfo">ⓘ</span></span>
             <div class="toggle-container">
                 <input id="partnerTryingToggle" type="checkbox" class="toggle-input">
                 <label for="partnerTryingToggle" class="toggle-label">
@@ -105,9 +102,43 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
         </div>
         <div class="stat-row">
             <span class="arrow">→</span>
-            <span class="stat-label">Your Interruptions</span>
+            <span class="stat-label">Count of You Interrupting Partner<span class="info-icon" id="interruptionCountInfo">ⓘ</span></span>
             <span class="stat-value" id="interruptionCount">##</span>
         </div>
+        
+        <h1>FINAL STATS</h1>
+	      <hr>
+	      <div class="stat-row">
+    		  <span class="stat-label">PRIMARY CONTRIBUTION<span class="info-icon" id="finalPrimaryContributionInfo">ⓘ</span></span>
+    		  <span class="stat-value" id="finalPrimaryContribution"></span>
+	      </div>
+	      <div class="stat-row">
+    		  <span class="stat-label">TOTAL LINES OF CODE: XX</span>
+    		  <span class="stat-value" id="finalTotalLinesOfCode"></span>
+	      </div>
+	      <div class="pie-chart-container">
+    		  <canvas id="codeContributionChart" width="200" height="200"></canvas>
+	      </div>
+	      <div class="stat-row">
+    		  <span class="stat-label">SESSION LEADERSHIP<span class="info-icon" id="sessionLeadershipInfo">ⓘ</span></span>
+    		  <span class="stat-value" id="sessionLeadership"></span>
+	      </div>
+	      <div class="stat-row">
+    		  <span class="stat-label">COMMUNICATION STYLE<span class="info-icon" id="finalCommunicationStyleInfo">ⓘ</span></span>
+    		  <span class="stat-value" id="finalCommunicationStyle"></span>
+	      </div>
+	      <div class="pie-chart-container">
+    		  <canvas id="communicationStyleChart" width="200" height="200"></canvas>
+	      </div>
+	      <div class="stat-row">
+    		  <span class="stat-label">SELF EFFICACY<span class="info-icon" id="selfEfficacyInfo">ⓘ</span></span>
+    		  <span class="stat-value" id="selfEfficacy"></span>
+	      </div>
+	      <div class="stat-row">
+    		  <span class="stat-label">YOUR INTERRUPTIONS: XX</span>
+    		  <span class="stat-value" id="finalInterruptions"></span>
+	      </div>
+        
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close-btn">✕</span>
@@ -115,38 +146,6 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
                 <p id="popupText"></p>
                 <p class="why-link">Why?</p>
                 <p class="click-info">Clicking on the above will open a browser link.</p>
-            </div>
-        </div>
-
-        <h1>PARTNER'S STATS</h1>
-        <hr>
-        <div class="stat-row">
-            <span class="arrow">→</span>
-            <span class="stat-label">Lines of Code</span>
-            <span class="stat-value" id="linesOfCode2">0</span>
-        </div>
-        <div class="stat-row">
-            <span class="arrow">→</span>
-            <span class="stat-label">Primary Contribution</span>
-            <span class="info-icon" id="primaryContributionInfo">ⓘ</span>
-            <div class="toggle-container">
-                <input id="primaryContributionToggle2" type="checkbox" class="toggle-input">
-                <label for="primaryContributionToggle2" class="toggle-label">
-                    <span class="toggle-text left">DRIVER</span>
-                    <span class="toggle-text right">NAVIGATOR</span>
-                </label>
-            </div>
-        </div>
-        <div class="stat-row">
-            <span class="arrow">→</span>
-            <span class="stat-label">Communication Style</span>
-            <span class="info-icon" id="communicationStyleInfo">ⓘ</span>
-            <div class="toggle-container">
-                <input id="communicationStyleToggle2" type="checkbox" class="toggle-input">
-                <label for="communicationStyleToggle2" class="toggle-label">
-                    <span class="toggle-text left">VERBAL</span>
-                    <span class="toggle-text right">NONVERBAL</span>
-                </label>
             </div>
         </div>
         <script nonce="${nonce}" src="${scriptUri}"></script>
