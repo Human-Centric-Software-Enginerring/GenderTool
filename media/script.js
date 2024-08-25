@@ -118,23 +118,18 @@
     });
 
     function updateFinalStats(stats) {
-        document.getElementById('finalPrimaryContribution').textContent = stats.primaryContribution;
-        document.getElementById('finalPrimaryContributionExtra').textContent = stats.primaryContributionExtra || '##';
-        document.getElementById('finalTotalLinesOfCode').textContent = stats.totalLinesOfCode;
-        document.getElementById('sessionLeadership').textContent = stats.sessionLeadership;
-        document.getElementById('sessionLeadershipExtra').textContent = stats.sessionLeadershipExtra || '##';
-        document.getElementById('finalCommunicationStyle').textContent = stats.communicationStyle;
-        document.getElementById('finalCommunicationStyleExtra').textContent = stats.communicationStyleExtra || '##';
-        document.getElementById('selfEfficacy').textContent = stats.selfEfficacy;
-        document.getElementById('selfEfficacyExtra').textContent = stats.selfEfficacyExtra || '##';
+        const popup = document.getElementById('finalStatsPopup');
+        const content = popup.querySelector('.final-stats-content');
+
+        content.querySelector('#finalPrimaryContribution').textContent = stats.primaryContribution;
+        content.querySelector('#finalTotalLinesOfCode').textContent = stats.totalLinesOfCode;
+        content.querySelector('#sessionLeadership').textContent = stats.sessionLeadership;
+        content.querySelector('#finalCommunicationStyle').textContent = stats.communicationStyle;
+        content.querySelector('#selfEfficacy').textContent = stats.selfEfficacy;
+        content.querySelector('#finalInterruptions').textContent = stats.interruptions;
 
         createPieChart('codeContributionChart', stats.codeContribution);
         createPieChart('communicationStyleChart', stats.communicationStats);
-
-        document.getElementById('codeContributionYou').textContent = stats.codeContribution.You;
-        document.getElementById('codeContributionPartner').textContent = stats.codeContribution.Partner;
-        document.getElementById('communicationStyleVerbal').textContent = stats.communicationStats.Verbal;
-        document.getElementById('communicationStyleNonVerbal').textContent = stats.communicationStats.NonVerbal;
     }
 
     function createPieChart(canvasId, data) {
@@ -155,10 +150,10 @@
             ctx.moveTo(100, 100);
             ctx.arc(100, 100, 100, startAngle, startAngle + sliceAngle);
             ctx.closePath();
-            ctx.fillStyle = label === 'you' || label === 'verbal' ? '#ff0000' : '#0000ff';
+            ctx.fillStyle = label === 'You' || label === 'Verbal' ? '#ff0000' : '#0000ff';
             ctx.fill();
     
-            // Add contrasting text
+            // Contrasting text
             const midAngle = startAngle + sliceAngle / 2;
             const x = 100 + Math.cos(midAngle) * 70;
             const y = 100 + Math.sin(midAngle) * 70;
@@ -172,9 +167,22 @@
         });
     }
     
-    // Add this line at the end of the script to ensure the charts are created when the page loads
+    // Final Stats button
+    document.getElementById('finalStatsButton').addEventListener('click', showFinalStatsPopup);
+
+    function showFinalStatsPopup() {
+        const popup = document.getElementById('finalStatsPopup');
+        popup.style.display = 'block';
+    }
+
+    // Close button for final stats popup
+    document.querySelector('#finalStatsPopup .close-btn').addEventListener('click', function() {
+        document.getElementById('finalStatsPopup').style.display = 'none';
+    });
+
+    // Ensuring the charts are created when the page loads
     window.addEventListener('load', () => {
-        createPieChart('codeContributionChart', {you: 50, partner: 50});
-        createPieChart('communicationStyleChart', {verbal: 50, nonVerbal: 50});
+        createPieChart('codeContributionChart', {You: 50, Partner: 50});
+        createPieChart('communicationStyleChart', {Verbal: 50, NonVerbal: 50});
     });
 })();
