@@ -106,38 +106,9 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
             <span class="stat-value" id="interruptionCount">##</span>
         </div>
         
-        <h1>FINAL STATS</h1>
-	      <hr>
-	      <div class="stat-row">
-    		  <span class="stat-label">PRIMARY CONTRIBUTION<span class="info-icon" id="finalPrimaryContributionInfo">ⓘ</span></span>
-    		  <span class="stat-value" id="finalPrimaryContribution"></span>
-	      </div>
-	      <div class="stat-row">
-    		  <span class="stat-label">TOTAL LINES OF CODE: XX</span>
-    		  <span class="stat-value" id="finalTotalLinesOfCode"></span>
-	      </div>
-	      <div class="pie-chart-container">
-    		  <canvas id="codeContributionChart" width="200" height="200"></canvas>
-	      </div>
-	      <div class="stat-row">
-    		  <span class="stat-label">SESSION LEADERSHIP<span class="info-icon" id="sessionLeadershipInfo">ⓘ</span></span>
-    		  <span class="stat-value" id="sessionLeadership"></span>
-	      </div>
-	      <div class="stat-row">
-    		  <span class="stat-label">COMMUNICATION STYLE<span class="info-icon" id="finalCommunicationStyleInfo">ⓘ</span></span>
-    		  <span class="stat-value" id="finalCommunicationStyle"></span>
-	      </div>
-	      <div class="pie-chart-container">
-    		  <canvas id="communicationStyleChart" width="200" height="200"></canvas>
-	      </div>
-	      <div class="stat-row">
-    		  <span class="stat-label">SELF EFFICACY<span class="info-icon" id="selfEfficacyInfo">ⓘ</span></span>
-    		  <span class="stat-value" id="selfEfficacy"></span>
-	      </div>
-	      <div class="stat-row">
-    		  <span class="stat-label">YOUR INTERRUPTIONS: XX</span>
-    		  <span class="stat-value" id="finalInterruptions"></span>
-	      </div>
+        <div class="stat-row">
+            <button id="finalStatsButton" class="custom-button">FINAL STATS</button>
+        </div>
         
         <div id="popup" class="popup">
             <div class="popup-content">
@@ -148,6 +119,45 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
                 <p class="click-info">Clicking on the above will open a browser link.</p>
             </div>
         </div>
+
+        <div id="finalStatsPopup" class="popup">
+            <div class="popup-content final-stats-content">
+                <span class="close-btn">✕</span>
+                <h1>FINAL STATS</h1>
+                <hr>
+                <div class="stat-row">
+                    <span class="stat-label">PRIMARY CONTRIBUTION<span class="info-icon" id="finalPrimaryContributionInfo">ⓘ</span></span>
+                    <span class="stat-value" id="finalPrimaryContribution"></span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">TOTAL LINES OF CODE:</span>
+                    <span class="stat-value" id="finalTotalLinesOfCode"></span>
+                </div>
+                <div class="pie-chart-container">
+                    <canvas id="codeContributionChart" width="200" height="200"></canvas>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">SESSION LEADERSHIP<span class="info-icon" id="sessionLeadershipInfo">ⓘ</span></span>
+                    <span class="stat-value" id="sessionLeadership"></span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">COMMUNICATION STYLE<span class="info-icon" id="finalCommunicationStyleInfo">ⓘ</span></span>
+                    <span class="stat-value" id="finalCommunicationStyle"></span>
+                </div>
+                <div class="pie-chart-container">
+                    <canvas id="communicationStyleChart" width="200" height="200"></canvas>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">SELF EFFICACY<span class="info-icon" id="selfEfficacyInfo">ⓘ</span></span>
+                    <span class="stat-value" id="selfEfficacy"></span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">YOUR INTERRUPTIONS:</span>
+                    <span class="stat-value" id="finalInterruptions"></span>
+                </div>
+            </div>
+        </div>
+
         <script nonce="${nonce}" src="${scriptUri}"></script>
     </body>
     </html>`;
