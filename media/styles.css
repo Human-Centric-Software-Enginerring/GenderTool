@@ -198,3 +198,43 @@ canvas {
     top: 230px;
     color: #0000ff;
 }
+
+.custom-button {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #ff0000;
+}
+
+.final-stats-content {
+    max-width: 80%;
+    width: 600px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.final-stats-content h1 {
+    color: #ff0000;
+    text-align: center;
+}
+
+.final-stats-content .stat-row {
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.final-stats-content .pie-chart-container {
+    margin: 20px auto;
+}
