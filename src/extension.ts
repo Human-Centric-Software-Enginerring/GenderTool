@@ -152,7 +152,7 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
                     <span class="stat-value" id="selfEfficacy"></span>
                 </div>
                 <div class="stat-row">
-                    <span class="stat-label">YOUR INTERRUPTIONS:</span>
+                    <span class="stat-label">INTERRUPTIONS<span class="info-icon" id="finalInterruptionsInfo">ⓘ</span></span>
                     <span class="stat-value" id="finalInterruptions"></span>
                 </div>
             </div>
