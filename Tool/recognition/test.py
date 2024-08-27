@@ -222,4 +222,3 @@ import json
 with open("keystroke_data.json", "r") as f:
         keystroke_data = json.load(f)
 print(keystroke_data['lines_of_code'])
-

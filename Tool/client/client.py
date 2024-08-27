@@ -202,16 +202,18 @@ async def process_generated_data(websocket, device_id):
     #print(data_to_send)
     await websocket.send(json.dumps(data_to_send))
     print("Processed data sent to the server")
+
     response = await websocket.recv()
-    #print(f"Response from server after data processing: {response}")
+    print(f"Response from server after data processing")
     parsed_response = json.loads(response)
-    for user in parsed_response['users']:
+    #print(parsed_response)
+    for user in parsed_response['users_data']:
         if user['device_id'] == device_id:
             user1_data = user
         else:
             user2_data = user
     
-    # Ensure we have both users' data
+    # # Ensure we have both users' data
     if user1_data is None or user2_data is None:
         print("Error: Missing user data")
         return
