@@ -33,7 +33,7 @@ async def handle_connection(websocket, path):
         if session:
             print("Session found, updating existing session")
             # Generate a new user_id for the new device/user
-            user_id = len(session['users']) + 1
+            user_id = len(session['users'])
 
             # Append device_id to the users list if it does not exist
             if not any(user['device_id'] == device_id for user in session['users']):
@@ -64,20 +64,84 @@ async def handle_connection(websocket, path):
             "user_id": user_id  # Include user_id in the response
         }
 
+        await websocket.send(json.dumps(response))
+        print("Response sent to client with user_id:", response.get("user_id", "N/A"))
+
+        # Wait for further data from the client
+        while True:
+            message = await websocket.recv()
+            print("Data message received from client")
+            data = json.loads(message)
+
+            # Extract the relevant data
+            LOC = data.get('LOC')
+            rapport_score = data.get('rapport_score')
+            utterances_data = data.get('utterances_data')
+
+            # Update the user's data in MongoDB
+            db.sessions.update_one(
+                {"session_id": session_id, "users.device_id": device_id},
+                {"$set": {
+                    "users.$.data": {
+                        "LOC": LOC,
+                        "rapport_score": rapport_score,
+                        "utterances": utterances_data
+                    }
+                }}
+            )
+
+            # Retrieve data for the user(s) from the database
+            session = db.sessions.find_one({"session_id": session_id})
+            users_data = session.get("users", [])
+
+            # Filter out the relevant data
+            response_data = []
+            for user in users_data[:2]:
+                user_data = user.get("data")
+                if user_data:
+                    response_data.append(user_data)
+
+            # Send success message back to client
+            response = {
+                "status": "success",
+                "message": "Data updated successfully",
+                "users_data": response_data
+            }
+            await websocket.send(json.dumps(response))
+            print("Data updated in MongoDB and response sent to client")
+            message = await websocket.recv()
+            print("Interval data message received from client")
+            data = json.loads(message)
+            # Extract the relevant data including device_id
+            device_id = data.get('device_id')
+            users_data = data.get('users')
+            # Update the user's intervals in MongoDB based on session_id and device_id
+            for user_data in users_data:
+                db.sessions.update_one(
+                    {"session_id": session_id, "users.device_id": device_id},
+                    {"$push": {
+                        "users.$.intervals": user_data['intervals'][-1]  # Append the new interval data
+                    }}
+                )
+            # Send a confirmation back to the client
+            response = {
+                "status": "success",
+                "message": "Interval data updated successfully"
+            }
+            await websocket.send(json.dumps(response))
+            print("Interval data updated in MongoDB and confirmation sent to client")
+
+    except websockets.exceptions.ConnectionClosedError as e:
+        print(f"Client connection closed with error: {e}")
     except Exception as e:
         print(f"Error in connection handler: {e}")
-        response = {
-            "status": "error", 
-            "message": str(e)
-        }
-    
-    # Send the response back to the client
-    await websocket.send(json.dumps(response))
-    print("Response sent to client with user_id:", response.get("user_id", "N/A"))
+    finally:
+        print("Closing connection with the client")
+        await websocket.close()
+        
 
-start_server = websockets.serve(handle_connection, "localhost", 8765)
+start_server = websockets.serve(handle_connection, "localhost", 8765, ping_timeout=120)
 
 print("Starting server...")
 asyncio.get_event_loop().run_until_complete(start_server)
-print("Server started successfully")
 asyncio.get_event_loop().run_forever()

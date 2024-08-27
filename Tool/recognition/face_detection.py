@@ -50,7 +50,7 @@ class FaceDetection:
                         
                         # Record the start time for the new emotion
                         emotion_start_time = time.time() - start_time
-                        print(f"Detected emotion: {emotion} at {emotion_start_time:.2f} sec")
+                        #print(f"Detected emotion: {emotion} at {emotion_start_time:.2f} sec")
                     
                     previous_emotion = emotion
 

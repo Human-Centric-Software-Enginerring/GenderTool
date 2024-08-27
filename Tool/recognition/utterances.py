@@ -65,7 +65,7 @@ def record_audio(duration=30):  # 5 minutes in seconds
                 is_speech = vad.is_speech(frame, RATE)
                 current_time = time.time() - start_time
                 if is_speech:
-                    print(f"Speech detected at {current_time:.2f}s")
+                    #print(f"Speech detected at {current_time:.2f}s")
                     last_activity_time = time.time()
                     if 'last_pause_start' in locals():
                         # Record the pause
@@ -192,7 +192,7 @@ def main():
         while record_thread.is_alive():
             time.sleep(0.1)
     except KeyboardInterrupt:
-        print("Stopping recording...")
+        #print("Stopping recording...")
         stop_recording = True
         record_thread.join()
 

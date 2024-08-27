@@ -41,10 +41,6 @@ def interruptions(utterances1,utterances2):
 
     return user1_interruptions, user2_interruptions
 
-def rapport_score(s1):
-    
-    return
-
 #to-do
 def communication_style(emotions,utterances):
     non_verbal = len(emotions) + sum(1 for event in utterances if event["event"].lower() not in ["speech", "pause"])
