@@ -86,20 +86,7 @@ def interruptions(utterances1,utterances2):
             if event1['event'] == 'speech' and event2['event'] == 'speech' and start1 <= start2 <= end1:
                 print(event1,event2,"\n")
                 user2_interruptions += 1
-
-    # Iterate over each event in user2's data
-    for event2 in utterances2:
-        start2 = event2['start_timestamp']
-        end2 = event2['end_timestamp']
-
-        # Check for interruptions by user1 during user2's event
-        for event1 in utterances1:
-            start1 = event1['start_timestamp']
-            if event2['event'] == 'speech' and event1['event'] == 'speech' and start2 <= start1 <= end2:
-                print(event2,event1,"\n")
-                user1_interruptions += 1
-
-    return user1_interruptions, user2_interruptions
+    return user1_interruptions
 
 def communication_style(emotions,utterances):
     non_verbal = len(emotions) + sum(1 for event in utterances if event["event"].lower() not in ["speech", "pause"])
@@ -255,7 +242,7 @@ def main():
         print("Failed to obtain device ID.")
         return
 
-    session_id = "001"  # Will take session_id from user
+    session_id = "003"  # Will take session_id from user
     asyncio.get_event_loop().run_until_complete(connect_to_server(device_id, session_id))
 
 if __name__ == "__main__":

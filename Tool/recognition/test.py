@@ -218,7 +218,9 @@ def processed_data(utterances):
 
 #print(rapport_score(utterances))
 #print(processed_data(utterances))
-import json
-with open("keystroke_data.json", "r") as f:
-        keystroke_data = json.load(f)
-print(keystroke_data['lines_of_code'])
+# import json
+# with open("keystroke_data.json", "r") as f:
+#         keystroke_data = json.load(f)
+# print(keystroke_data['lines_of_code'])
+
+print("inside test.py")
