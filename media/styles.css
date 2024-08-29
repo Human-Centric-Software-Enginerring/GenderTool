@@ -1,7 +1,13 @@
 body {
-    font-family: Ariel ,sanf-serif;
-    background-color: #000000;
-    color: #ffffff;
+    display: flex; /* Use Flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Corrected font family spelling */
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text color */
     padding: 20px;
 }
 
@@ -166,3 +172,79 @@ hr {
     margin-top: 5px;
     text-align: center;
 }
+.session-id-container {
+    margin: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.session-id-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+    color: floralwhite;
+}
+
+.session-id-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid:#ffffff;
+    border-radius: 4px;
+    width: 200px;
+    width: 220px; 
+    margin-right: 10px;
+}
+
+.submit-button {
+    background-color: #90ee90; /* Light green */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; 
+}
+
+.submit-button:hover {
+    background-color: #76c776; /* Slightly darker green on hover */
+}
+
+.submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+
+.progress-message {
+    display: flex; /* Ensures flex properties apply */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within each flex item */
+    margin-top: 20px;
+}
+
+.loading-icon {
+    width: 20px;
+    height: 20px;
+    border: 4px solid #f3f3f3; /* Light gray */
+    border-top: 4px solid #76c776; /* Green */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none; /* Completely hides the element */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
