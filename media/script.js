@@ -99,6 +99,10 @@
                     command: 'runTest2',
                     sessionId: sessionId
                 });
+                // vscode.postMessage({
+                //     command: 'updateData',
+                //     users_data: 'abc'
+                // });
                 console.log('Message sent to VSCode extension');
             });
         } else {
@@ -149,7 +153,19 @@
                 document.getElementById('progressMessage').classList.remove('hidden');
                 break;
             case 'updateData':
-                updateUserStats(message.user1, message.user2);
+                console.log("script.js Line 156");
+                if (message.users_data && Array.isArray(message.users_data) && message.users_data.length === 2) {
+                    console.log('Received updateData command with data:', message.users_data);
+                    const user1 = message.users_data[0] ;// "Your Stats"
+                    const user2 = message.users_data[1]; //?.intervals !== null ? message.users_data[1]?.intervals[0] : null; // "Partner Stats"
+                    console.log(user1,user2);
+                    updateUserStats(user1, user2);
+                    document.getElementById('progressMessage').classList.add('hidden');
+                    document.getElementById('userStats').classList.remove('hidden');
+                    console.log('User stats updated and displayed.');
+                } else {
+                    console.error('User data is missing or invalid:', message);
+                }
                 break;
             case 'sessionCompleted':
                 // Only handle the session as completed when all data has been processed
@@ -163,6 +179,7 @@
         }
     });
     function updateUserStats(user1, user2) {
+        console.log('Updating user stats with:', user1, user2);
         // Update stats for User 1
         document.getElementById('user1PrimaryContribution').textContent = user1.role;
         document.getElementById('user1CommunicationStyle').textContent = user1.communication_style;
@@ -173,7 +190,6 @@
         document.getElementById('user2PrimaryContribution').textContent = user2.role;
         document.getElementById('user2CommunicationStyle').textContent = user2.communication_style;
         document.getElementById('user2SelfEfficacy').textContent = user2.self_efficacy[0] > user2.self_efficacy[1] ? "High" : "Low";
-        document.getElementById('user2Interruptions').textContent = user2.interruptions;
     }
 
 })();
