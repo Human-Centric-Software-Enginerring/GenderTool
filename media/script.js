@@ -99,14 +99,24 @@
                     command: 'runTest2',
                     sessionId: sessionId
                 });
-                // vscode.postMessage({
-                //     command: 'updateData',
-                //     users_data: 'abc'
-                // });
                 console.log('Message sent to VSCode extension');
             });
         } else {
             console.error('runTest2Btn element not found');
+        }
+
+        const endSessionBtn = document.getElementById('endSession');
+        if (endSessionBtn) {
+            endSessionBtn.addEventListener('click', () => {
+                console.log('End Session button clicked');
+                // Send a message to the server to end the session
+                vscode.postMessage({
+                    command: 'endSession'
+                });
+                console.log('End session message sent to server');
+            });
+        } else {
+            console.error('End Session button not found');
         }
     });
 

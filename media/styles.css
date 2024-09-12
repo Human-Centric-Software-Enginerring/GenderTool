@@ -237,6 +237,29 @@ hr {
     margin-bottom: 15px;
 }
 
+.end-button {
+    background-color: #ca7a70;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; 
+}
+
+.end-button:hover {
+    background-color: #dc6a5b; /* Slightly darker green on hover */
+}
+
+.end-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.872);
+}
+
+
 .hidden {
     display: none; /* Completely hides the element */
 }
