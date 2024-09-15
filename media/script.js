@@ -31,6 +31,12 @@
         },
     };
 
+    // Placeholder for interruptions over time data
+    let interruptionsOverTime = {
+        You: [0, 2, 5, 8, 10, 15, 18, 20, 22, 25, 28, 30],
+        Partner: [0, 1, 3, 6, 9, 11, 14, 16, 19, 21, 24, 26]
+    };
+
     // Info popups
     document.querySelectorAll('.info-icon').forEach(icon => {
         icon.addEventListener('click', function() {
@@ -130,6 +136,7 @@
 
         createPieChart('codeContributionChart', stats.codeContribution);
         createPieChart('communicationStyleChart', stats.communicationStats);
+        createInterruptionsLineChart('interruptionsChart', stats.interruptionsOverTime || interruptionsOverTime);
     }
 
     function createPieChart(canvasId, data) {
@@ -166,6 +173,110 @@
             startAngle += sliceAngle;
         });
     }
+
+    function createInterruptionsLineChart(canvasId, data) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) {
+            console.error(`Canvas element with id '${canvasId}' not found`);
+            return;
+        }
+        const ctx = canvas.getContext('2d');
+        
+        const maxInterruptions = 100;
+        const maxMinutes = 60;
+        const intervalMinutes = 5;
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        const legendWidth = 90;
+        const chartWidth = canvas.width - 60 - legendWidth;
+        const chartHeight = canvas.height - 60;
+        const xStart = 50;
+        const yStart = 10;
+        
+        // Draw axes
+        ctx.beginPath();
+        ctx.moveTo(xStart, yStart);
+        ctx.lineTo(xStart, yStart + chartHeight);
+        ctx.lineTo(xStart + chartWidth, yStart + chartHeight);
+        ctx.strokeStyle = '#ffffff';
+        ctx.stroke();
+        
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        for (let i = 0; i <= maxInterruptions; i += 10) {
+            const y = yStart + chartHeight - (i / maxInterruptions) * chartHeight;
+            ctx.fillText(i.toString(), xStart - 5, y);
+            ctx.beginPath();
+            ctx.moveTo(xStart, y);
+            ctx.lineTo(xStart + chartWidth, y);
+            ctx.strokeStyle = '#333333';
+            ctx.stroke();
+        }
+        
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        for (let i = 0; i <= maxMinutes; i += intervalMinutes) {
+            const x = xStart + (i / maxMinutes) * chartWidth;
+            ctx.fillText(i.toString(), x, yStart + chartHeight + 5);
+            ctx.beginPath();
+            ctx.moveTo(x, yStart);
+            ctx.lineTo(x, yStart + chartHeight);
+            ctx.strokeStyle = '#333333';
+            ctx.stroke();
+        }
+        
+        const drawLine = (dataPoints, color) => {
+            ctx.beginPath();
+            dataPoints.forEach((point, index) => {
+                const x = xStart + (index * intervalMinutes / maxMinutes) * chartWidth;
+                const y = yStart + chartHeight - (point / maxInterruptions) * chartHeight;
+                if (index === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        };
+        
+        drawLine(data.You, '#ff0000');
+        drawLine(data.Partner, '#0000ff');
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '14px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Time (Minutes)', xStart + chartWidth / 2, yStart + chartHeight + 20);
+        
+        ctx.save();
+        ctx.translate(15, yStart + chartHeight / 2);
+        ctx.rotate(-Math.PI / 2);
+        ctx.fillText('Interruptions', 0, 0);
+        ctx.restore();
+
+        const legendX = xStart + chartWidth + 20;
+        const legendY = yStart + 20;
+        const legendSpacing = 30;
+
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        
+        // You
+        ctx.fillStyle = '#ff0000';
+        ctx.fillRect(legendX, legendY, 20, 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText('You', legendX + 30, legendY);
+
+        // Partner
+        ctx.fillStyle = '#0000ff';
+        ctx.fillRect(legendX, legendY + legendSpacing, 20, 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText('Partner', legendX + 30, legendY + legendSpacing);
+    }
     
     // Final Stats button
     document.getElementById('finalStatsButton').addEventListener('click', showFinalStatsPopup);
@@ -184,5 +295,6 @@
     window.addEventListener('load', () => {
         createPieChart('codeContributionChart', {You: 50, Partner: 50});
         createPieChart('communicationStyleChart', {Verbal: 50, NonVerbal: 50});
+        createInterruptionsLineChart('interruptionsChart', interruptionsOverTime);
     });
 })();
