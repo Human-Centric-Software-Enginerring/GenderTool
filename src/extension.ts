@@ -155,6 +155,9 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
                     <span class="stat-label">INTERRUPTIONS<span class="info-icon" id="finalInterruptionsInfo">ⓘ</span></span>
                     <span class="stat-value" id="finalInterruptions"></span>
                 </div>
+                <div class="chart-container">
+                    <canvas id="interruptionsChart" width="350" height="200"></canvas>
+                </div>
             </div>
         </div>
 
