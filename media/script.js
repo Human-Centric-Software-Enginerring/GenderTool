@@ -177,6 +177,20 @@
                     console.error('User data is missing or invalid:', message);
                 }
                 break;
+            case 'finalStats':
+                if (message.final_data && Array.isArray(message.final_data) && message.final_data.length === 2) {
+                    const user1 = message.final_data[0] ;// "Your Stats"
+                    const user2 = message.final_data[1]; //?.intervals !== null ? message.users_data[1]?.intervals[0] : null; // "Partner Stats"
+                    console.log(user1,user2);
+                    updateFinalStats(user1, user2);
+                    document.getElementById('progressMessage').classList.add('hidden');
+                    document.getElementById('userStats').classList.add('hidden');
+                    document.getElementById('finalStats').classList.remove('hidden');
+                    console.log('User stats updated and displayed.');
+                } else {
+                    console.error('User data is missing or invalid:', message);
+                }
+                break;
             case 'sessionCompleted':
                 // Only handle the session as completed when all data has been processed
             document.getElementById('progressMessage').classList.add('hidden');
@@ -195,11 +209,42 @@
         document.getElementById('user1CommunicationStyle').textContent = user1.communication_style;
         document.getElementById('user1SelfEfficacy').textContent = user1.self_efficacy[0] > user1.self_efficacy[1] ? "High" : "Low";
         document.getElementById('user1Interruptions').textContent = user1.interruptions;
+        document.getElementById('user1Leasdership').textContent = user1.leadership;
+        rapport_u1a = "Keep up with building friendly connection with your partner but make sure you are focused on the task.";
+        rapport_u1b = "Continue focusing on the task,but remember to be friendly with your partner to build connection.";
+        document.getElementById('user1Rapport').textContent = user1.rapport_score > 0.5 ? rapport_u1a : rapport_u1b;
     
         // Update stats for User 2
         document.getElementById('user2PrimaryContribution').textContent = user2.role;
         document.getElementById('user2CommunicationStyle').textContent = user2.communication_style;
         document.getElementById('user2SelfEfficacy').textContent = user2.self_efficacy[0] > user2.self_efficacy[1] ? "High" : "Low";
+        rapport_u2a = "Your partner is making conversation with you and attempting to be friendly.";
+        rapport_u2b ="Your partner seems more invested in task than casual conversation";
+        document.getElementById('user2Rapport').textContent = user2.rapport_score > 0.5 ? rapport_u2a : rapport_u2b;
+        //Update session stats
+        document.getElementById('sessionLOC').textContent = user1.loc + user2.loc;
+    }
+
+    function updateFinalStats(user1,user2){
+        console.log('updating final stats');
+        document.getElementById('user1FinalRole').textContent = user1.role;
+        document.getElementById('user1FinalComm').textContent = user1.communication_style;
+        document.getElementById('user1FinalEfficacy').textContent = user1.self_efficacy[0] > user1.self_efficacy[1] ? "High" : "Low";
+        document.getElementById('user1FinalInterr').textContent = user1.interruptions;
+        document.getElementById('user1FinalLeadership').textContent = user1.leadership;
+        rapport_u1a = "Keep up with building friendly connection with your partner but make sure you are focused on the task.";
+        rapport_u1b = "Continue focusing on the task,but remember to be friendly with your partner to build connection.";
+        document.getElementById('user1FinalRapport').textContent = user1.rapport_score > 0.5 ? rapport_u1a : rapport_u1b;
+    
+        // Update stats for User 2
+        document.getElementById('user2FinalRole').textContent = user2.role;
+        document.getElementById('user2FinalComm').textContent = user2.communication_style;
+        document.getElementById('user2FinalEfficacy').textContent = user2.self_efficacy[0] > user2.self_efficacy[1] ? "High" : "Low";
+        rapport_u2a = "Your partner is making conversation with you and attempting to be friendly.";
+        rapport_u2b ="Your partner seems more invested in task than casual conversation";
+        document.getElementById('user2FinalRapport').textContent = user2.rapport_score > 0.5 ? rapport_u2a : rapport_u2b;
+        //Update session stats
+        document.getElementById('sessionFinalLOC').textContent = user1.loc + user2.loc;
     }
 
 })();

@@ -1,8 +1,4 @@
 "use strict";
-// import * as vscode from 'vscode';
-// import { exec } from 'child_process';
-// import WebSocket from 'ws';
-// import { MessageEvent as WSMessageEvent } from 'ws';
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -32,186 +28,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
-// export function activate(context: vscode.ExtensionContext) {
-//     const provider = new GenderToolViewProvider(context.extensionUri);
-//     context.subscriptions.push(
-//         vscode.window.registerWebviewViewProvider(GenderToolViewProvider.viewType, provider)
-//     );
-//     // Run the Python scripts when the extension is activated
-//     provider.runPythonScripts();  // Updated to use the class method
-// }
-// class GenderToolViewProvider implements vscode.WebviewViewProvider {
-//     public static readonly viewType = 'genderToolView';
-//     private _view?: vscode.WebviewView;
-//     private ws?: WebSocket;
-//     constructor(
-//         private readonly _extensionUri: vscode.Uri,
-//     ) { }
-//     public resolveWebviewView(
-//         webviewView: vscode.WebviewView,
-//         context: vscode.WebviewViewResolveContext,
-//         _token: vscode.CancellationToken,
-//     ) {
-//         this._view = webviewView;
-//         webviewView.webview.options = {
-//             enableScripts: true,
-//             localResourceRoots: [
-//                 this._extensionUri
-//             ]
-//         };
-//         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
-//         webviewView.webview.onDidReceiveMessage(
-//             message => {
-//                 switch (message.command) {
-//                     case 'openLink':
-//                         vscode.env.openExternal(vscode.Uri.parse(message.link));
-//                         return;
-//                     case 'runTest2':
-//                         console.log(`Received command to run client.py with session ID: ${message.sessionId}`);
-//                         this.runTest2Script(message.sessionId);
-//                         return;
-//                     case 'updateData':
-//                         console.log('Line 53: Received updateData command:', message.users_data);
-//                         break;
-//                     case 'endSession':
-//                         console.log('Received command to end session');
-//                         this.sendEndSessionMessageToServer();
-//                         break;
-//                 }
-//             }
-//         );
-//     }
-//     private sendEndSessionMessageToServer() {
-//         const ws = new WebSocket('ws://localhost:8765');
-//         if (this.ws && this.ws.readyState === WebSocket.OPEN) {
-//             this.ws.send('Endsession');
-//             console.log('Sent "Endsession" message to the server');
-//         } else {
-//             console.error('WebSocket is not open. Cannot send "Endsession" message.');
-//         }
-//     }
-//     private runTest2Script(sessionId: string) {
-//         const scriptPath = 'D:/HCI_Research/GenderTool/Tool/recognition/test2.py';
-//         const command = `python "${scriptPath}" "${sessionId}"`;
-//         // Update UI to show progress message
-//         if (this._view) {
-//             this._view.webview.postMessage({ command: 'showProgress' });
-//         }
-//         exec(command, (error, stdout, stderr) => {
-//             if (error) {
-//                 vscode.window.showErrorMessage(`Failed to run client.py: ${error.message}`);
-//                 return;
-//             }
-//             if (stderr) {
-//                 console.warn(`Warnings from client.py: ${stderr}`);
-//             }
-//             // Output from the script
-//             console.log(`Output from client.py: ${stdout}`);
-//         });
-//     }
-//     public refreshWebview() {
-//         if (this._view && this._view.webview) {
-//             this._view.webview.html = this._getHtmlForWebview(this._view.webview);
-//         }
-//     }
-//     private _getHtmlForWebview(webview: vscode.Webview): string {
-//         const nonce = getNonce();
-//         const stylesUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'styles.css'));
-//         const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'script.js'));
-//         return `<!DOCTYPE html>
-//         <html lang="en">
-//         <head>
-//             <meta charset="UTF-8">
-//             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//             <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src vscode-resource: https:; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}'; connect-src ws://localhost:8765;">
-//             <title>Gender Tool</title>
-//             <link href="${stylesUri}" rel="stylesheet">
-//         </head>
-//         <body>
-//             <!-- New section for entering session ID -->
-//             <div class="session-id-container">
-//                 <label for="sessionIdInput" class="session-id-label">Enter Session ID:</label>
-//                 <input type="text" id="sessionIdInput" class="session-id-input" placeholder="Session ID">
-//                 <button id="runTest2Btn" class="submit-button">Submit</button>
-//             </div>
-//             <!-- Progress message container, initially hidden -->
-//             <div id="progressMessage" class="progress-message hidden">
-//                 <div class="loading-icon"></div>
-//                 <p>Session started, reports will be displayed soon!</p>
-//             </div>
-//             <!-- User Stats Display -->
-//             <div id="userStats" class="user-stats hidden">
-//                 <h1>Your Stats</h1>
-//                 <p> You worked primarily as <span id="user1PrimaryContribution"></span></p>
-//                 <p>Communication Style: <span id="user1CommunicationStyle"></span></p>
-//                 <p>Self Efficacy: <span id="user1SelfEfficacy"></span></p>
-//                 <p>Interruptions: <span id="user1Interruptions"></span></p>
-//                 <h1>Partner's Stats</h1>
-//                 <p>Primary Contribution: <span id="user2PrimaryContribution"></span></p>
-//                 <p>Communication Style: <span id="user2CommunicationStyle"></span></p>
-//                 <p>Self Efficacy: <span id="user2SelfEfficacy"></span></p>
-//             </div>
-//             <button id="endSession" class="submit-button">End Session</button>
-//             <script nonce="${nonce}" src="${scriptUri}"></script>
-//         </body>
-//         </html>`;
-//     }
-//     public runPythonScripts() {
-//         // Start the WebSocket server
-//         exec('python D:/HCI_Research/GenderTool/Tool/recognition/dummy.py', (error, stdout, stderr) => {
-//             if (error) {
-//                 console.error(`Error executing dummy.py: ${error.message}`);
-//                 return;
-//             }
-//             if (stderr) {
-//                 console.error(`Error in dummy.py: ${stderr}`);
-//             }
-//             console.log(`Output from dummy.py: ${stdout}`);
-//         });
-//         // Delay to ensure WebSocket server is up and running
-//         setTimeout(() => {
-//             // Establish WebSocket connection to receive data from server
-//             try {
-//                 const ws = new WebSocket('ws://localhost:8765');
-//                 ws.onopen = () => {
-//                     console.log('WebSocket connection established successfully with frontend.');
-//                     ws.send('Hello Server');
-//                     vscode.window.showInformationMessage('WebSocket connection established successfully!');
-//                 };
-//                 ws.onmessage = (event: WSMessageEvent) => {
-//                     console.log('Received data from server:', event.data);
-//                     vscode.window.showInformationMessage(`Recieved from server : $${event.data}`);
-//                     try {
-//                         const parsedData = JSON.parse(event.data.toString());
-//                         console.log('Parsed Data:', parsedData);  // For better visibility
-//                         console.log('data',parsedData.interval_data);
-//                         if (parsedData.status === 'intervalData' && this._view) {
-//                             console.log('line 161');
-//                                 this._view.webview.postMessage({ command: 'updateData', users_data: parsedData.interval_data});
-//                         }
-//                     } catch (e) {
-//                         console.error('Error parsing message:', e);
-//                     }
-//                 };           
-//                 ws.onerror = (error) => {
-//                     console.error('Frontend WebSocket Error:', error.message || 'Unknown error');
-//                     vscode.window.showErrorMessage('Frontend WebSocket Connection Error: ' + error.message);
-//                 };
-//             } catch (error) {
-//                 console.error('Error initializing WebSocket:', error);
-//             }
-//         }, 2000);  // Delay for 2 seconds
-//     }
-// }
-// function getNonce() {
-//     let text = '';
-//     const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     for (let i = 0; i < 32; i++) {
-//         text += possible.charAt(Math.floor(Math.random() * possible.length));
-//     }
-//     return text;
-// }
-// export function deactivate() {}
 const vscode = __importStar(require("vscode"));
 const child_process_1 = require("child_process");
 const ws_1 = __importDefault(require("ws"));
@@ -318,11 +134,33 @@ class GenderToolViewProvider {
                 <p>Communication Style: <span id="user1CommunicationStyle"></span></p>
                 <p>Self Efficacy: <span id="user1SelfEfficacy"></span></p>
                 <p>Interruptions: <span id="user1Interruptions"></span></p>
+                <p>Leadership Style: <span id="user1Leasdership"></span></p>
+                <p>Rapport: <span id="user1Rapport"></span></p>
                 <h1>Partner's Stats</h1>
                 <p>Primary Contribution: <span id="user2PrimaryContribution"></span></p>
                 <p>Communication Style: <span id="user2CommunicationStyle"></span></p>
                 <p>Self Efficacy: <span id="user2SelfEfficacy"></span></p>
+                <p>Rapport: <span id="user2Rapport"></span></p>
+                <h1>Session Stats</h1>
+                <p>Total Lines of Code: <span id="sessionLOC"></span></p>
                 <button id="endSession" class="end-button">End Session</button>
+            </div>
+            <div id="finalStats" class="final-stats hidden">
+                <h1>Final Stats</h1>
+                <h1>Your Stats</h1>
+                <p> You worked primarily as <span id="user1FinalRole"></span></p>
+                <p>Communication Style: <span id="user1FinalComm"></span></p>
+                <p>Self Efficacy: <span id="user1FinalEfficacy"></span></p>
+                <p>Interruptions: <span id="user1FinalInterr"></span></p>
+                <p>Leadership Style: <span id="user1FinalLeadership"></span></p>
+                <p>Rapport: <span id="user1FinalRapport"></span></p>
+                <h1>Partner's Stats</h1>
+                <p>Primary Contribution: <span id="user2FinalRole"></span></p>
+                <p>Communication Style: <span id="user2FinalComm"></span></p>
+                <p>Self Efficacy: <span id="user2FinalEfficacy"></span></p>
+                <p>Rapport: <span id="user2FinalRapport"></span></p>
+                <h1>Session Stats</h1>
+                <p>Total Lines of Code: <span id="sessionFinalLOC"></span></p>
             </div>
             <script nonce="${nonce}" src="${scriptUri}"></script>
         </body>
@@ -357,8 +195,12 @@ class GenderToolViewProvider {
                         const parsedData = JSON.parse(event.data.toString());
                         console.log('Parsed Data:', parsedData);
                         if (parsedData.status === 'intervalData' && this._view) {
-                            console.log('line 161');
                             this._view.webview.postMessage({ command: 'updateData', users_data: parsedData.interval_data });
+                        }
+                        // Check if the message contains final data
+                        if (parsedData.status === 'finalData' && this._view) {
+                            console.log('final data received');
+                            this._view.webview.postMessage({ command: 'finalStats', final_data: parsedData.final_data });
                         }
                     }
                     catch (e) {
