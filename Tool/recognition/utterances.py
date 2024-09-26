@@ -8,6 +8,7 @@ import threading
 import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
+import requests
 import pandas as pd
 import os
 
@@ -22,7 +23,7 @@ vad.set_mode(1)
 yamnet_model = hub.load('https://tfhub.dev/google/yamnet/1')
 
 # Load class map
-class_map_path = r"D://HCI_Research//GenderTool//Tool//recognition//yamnet_class_map.csv"
+class_map_path = "D://HCI_Research//GenderTool//Tool//recognition//yamnet_class_map.csv"
 df = pd.read_csv(class_map_path, header=None)
 class_names = df[2].values
 
@@ -37,18 +38,24 @@ audio = pyaudio.PyAudio()
 
 # Shared variable to stop recording
 stop_recording = False
+send_interval = 30  # 5 minutes in seconds
 
 # Function to record audio
-def record_audio(duration=30):  # 5 minutes in seconds
+def record_audio():
     global stop_recording
-    stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
+    while not stop_recording:
+        gather_audio_and_process(send_interval)
+
+def gather_audio_and_process(duration):
     frames = []
     results = []
     start_time = time.time()
 
-    print("Recording...")
-    while not stop_recording:
-        try:
+    stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
+    print(f"Recording for {duration} seconds...")
+
+    try:
+        while time.time() - start_time < duration and not stop_recording:
             data = stream.read(CHUNK)
             frames.append(data)
 
@@ -65,10 +72,8 @@ def record_audio(duration=30):  # 5 minutes in seconds
                 is_speech = vad.is_speech(frame, RATE)
                 current_time = time.time() - start_time
                 if is_speech:
-                    #print(f"Speech detected at {current_time:.2f}s")
                     last_activity_time = time.time()
                     if 'last_pause_start' in locals():
-                        # Record the pause
                         results.append({
                             "start_timestamp": round(last_pause_start, 2),
                             "end_timestamp": round(current_time, 2),
@@ -81,64 +86,48 @@ def record_audio(duration=30):  # 5 minutes in seconds
                         if 'last_pause_start' not in locals():
                             last_pause_start = current_time  # Mark the start of the pause
 
-            # Check if 5 minutes have passed
-            if time.time() - start_time >= duration:
-                break
-        except Exception as e:
-            print(f"Exception occurred in recording thread: {e}")
-
-    # Handle case where recording ends and there was an ongoing pause
-    if 'last_pause_start' in locals():
-        results.append({
-            "start_timestamp": round(last_pause_start, 2),
-            "end_timestamp": round(time.time() - start_time, 2),
-            "event": "pause"
-        })
-
-    # Save the current audio segment
-    segment_filename = "full_recording.wav"
-    save_audio(frames, RATE, segment_filename)
-
-    # Measure time for transcription
-    transcription_start_time = time.time()
-    
-    # Transcribe the audio
-    transcription_result = transcribe_audio(segment_filename)
-    
-    transcription_end_time = time.time()
-    transcription_duration = transcription_end_time - transcription_start_time
-    print(f"Transcription completed in {transcription_duration:.2f} seconds")
-
-    for segment in transcription_result['segments']:
-        if segment['text'].strip():  # Only include if there's actual transcription
+        if 'last_pause_start' in locals():
             results.append({
-                "start_timestamp": round(segment['start'], 2),
-                "end_timestamp": round(segment['end'], 2),
-                "event": "speech",
-                "transcription": segment['text']
+                "start_timestamp": round(last_pause_start, 2),
+                "end_timestamp": round(time.time() - start_time, 2),
+                "event": "pause"
             })
 
-    # Detect non-verbal sounds in the segment
-    non_verbal_results = detect_non_verbal(segment_filename)
-    results.extend(non_verbal_results)
+        # Save the current audio segment
+        segment_filename = "full_recording.wav"
+        save_audio(frames, RATE, segment_filename)
 
-    # Sort results by start_timestamp (which should be float)
-    #print(results)
-    results.sort(key=lambda x: x['start_timestamp'])
+        # Transcribe the audio
+        transcription_result = transcribe_audio(segment_filename)
+        for segment in transcription_result['segments']:
+            if segment['text'].strip():
+                results.append({
+                    "start_timestamp": round(segment['start'], 2),
+                    "end_timestamp": round(segment['end'], 2),
+                    "event": "speech",
+                    "transcription": segment['text'],
+                    "words": len(segment['text'].split())
+                })
 
-    # Save results to a JSON file
-    json_filename = "utterance_data.json"
-    with open(json_filename, "w") as f:
-        json.dump(results, f, indent=4)
+        # Detect non-verbal sounds in the segment
+        non_verbal_results = detect_non_verbal(segment_filename)
+        results.extend(non_verbal_results)
 
-    print(f"Results saved to {json_filename}")
+        # Sort results by start_timestamp
+        results.sort(key=lambda x: x['start_timestamp'])
 
-    # Remove the audio file after transcription
-    os.remove(segment_filename)
-    print(f"Deleted {segment_filename}")
+        # Send the transcriptions to the server every 5 minutes
+        send_transcriptions_to_server(results)
 
-    stream.stop_stream()
-    stream.close()
+        # Remove the audio file after transcription
+        os.remove(segment_filename)
+        print(f"Deleted {segment_filename}")
+
+    except Exception as e:
+        print(f"Exception occurred during recording: {e}")
+    finally:
+        stream.stop_stream()
+        stream.close()
 
 # Function to save audio to a file
 def save_audio(frames, rate, output_filename):
@@ -165,37 +154,61 @@ def detect_non_verbal(audio_filename):
     
     waveform = tf.cast(waveform, tf.float32)
     scores, embeddings, spectrogram = yamnet_model(waveform)
-
+    human_sounds = [
+            "Speech", "Child speech, kid speaking", "Babbling", "Shout", "Bellow", "Whoop", "Yell", "Screaming",
+            "Whispering", "Laughter", "Baby laughter", "Giggle", "Snicker", "Belly laugh", "Chuckle, chortle",
+            "Crying, sobbing", "Whimper", "Wail, moan", "Sigh", "Singing", "Choir", "Yodeling", "Chant", "Mantra",
+            "Humming", "Groan", "Grunt", "Whistling", "Breathing", "Wheeze", "Snoring", "Gasp", "Pant", "Snort",
+            "Cough", "Throat clearing", "Sneeze", "Sniff", "Cheering", "Hubbub, speech noise, speech babble"
+        ]
     for i, score in enumerate(scores):
         timestamp = i * 0.5  # Assuming 0.5s per score segment
         top_class = np.argmax(score)
         class_name = class_names[top_class]
-
-        if class_name != 'display_name':
-            results.append({
-                "start_timestamp": round(timestamp, 2),
-                "end_timestamp": round(timestamp + 0.5, 2),
-                "event": class_name
-            })
+        confidence = score[top_class]
+        if class_name in human_sounds and confidence > 0.8:
+                results.append({
+                    "start_timestamp": round(timestamp, 2),
+                    "end_timestamp": round(timestamp + 0.5, 2),
+                    "event": class_name,
+                    "confidence": float(confidence)
+                })
 
     return results
+
+def send_transcriptions_to_server(transcriptions):
+    """
+    Send the transcriptions to the existing FastAPI server.
+    """
+    try:
+        url = "http://127.0.0.1:8000/update-utterances"  # Replace with your actual endpoint
+        response = requests.post(url, json=transcriptions)
+        if response.status_code != 200:
+            print(f"Failed to send transcriptions. Server response: {response.status_code} - {response.text}")
+    except Exception as e:
+        print(f"Error sending transcriptions to the server: {e}")
 
 # Main function
 def main():
     global stop_recording
 
-    # Start recording in a separate thread to allow for manual interruption
+    # Start recording in a separate thread
     record_thread = threading.Thread(target=record_audio)
     record_thread.start()
+
+    # Set a timer to stop the recording after 30 seconds
+    stop_timer = threading.Timer(30, lambda: globals().__setitem__('stop_recording', True))
+    stop_timer.start()
 
     try:
         while record_thread.is_alive():
             time.sleep(0.1)
     except KeyboardInterrupt:
-        #print("Stopping recording...")
+        print("Stopping recording...")
         stop_recording = True
         record_thread.join()
 
+    stop_timer.cancel()  # Cancel the timer if recording is stopped manually
     audio.terminate()
 
 if __name__ == "__main__":

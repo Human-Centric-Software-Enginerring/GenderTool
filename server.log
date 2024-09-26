@@ -1,0 +1,11 @@
+2024-09-26 11:02:06,680 - INFO - Database connection successful
+2024-09-26 11:03:34,155 - INFO - Client connected: 9053a210-1490-46b9-9e51-30a94bf0a90e
+2024-09-26 11:03:34,160 - INFO - Message received from client
+2024-09-26 11:03:34,161 - INFO - Client identified with connection_id: 9053a210-1490-46b9-9e51-30a94bf0a90e, device_id: 10DEC04C-26D4-11B2-A85C-82FEA969117E, session_id: 009
+2024-09-26 11:03:36,035 - INFO - Session not found, creating a new session
+2024-09-26 11:03:36,259 - INFO - Response sent to client with user_id: 1
+2024-09-26 11:05:00,749 - INFO - Data message received from client
+2024-09-26 11:05:00,965 - INFO - Update result: {'n': 1, 'electionId': ObjectId('7fffffff0000000000000073'), 'opTime': {'ts': Timestamp(1727363098, 10), 't': 115}, 'nModified': 1, 'ok': 1.0, '$clusterTime': {'clusterTime': Timestamp(1727363098, 10), 'signature': {'hash': b'\xb5"W%\xbd\x92`\x12\x98=nl\xff\xfdg\xec\xbb\xeb~Y', 'keyId': 7385505369973325828}}, 'operationTime': Timestamp(1727363098, 10), 'updatedExisting': True}
+2024-09-26 11:06:03,841 - ERROR - Timeout reached while waiting for user2 data
+2024-09-26 11:06:03,847 - ERROR - Client disconnected
+2024-09-26 11:06:03,848 - ERROR - Error closing websocket: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.

@@ -2,10 +2,12 @@ import keyboard
 import time
 import json
 from win32gui import GetWindowText, GetForegroundWindow
-from threading import Timer
+from threading import Timer, Thread
+import requests
 
 line_count = 0
 stop_program = False
+send_interval = 30  # 30 seconds
 
 def count_newline(event):
     global line_count
@@ -19,23 +21,41 @@ def stop_collection():
     stop_program = True
     keyboard.unhook_all()  # Unhook all keyboard events
 
-def save_data_to_file():
-    # Save the line count to a JSON file
+def send_data_to_api():
+    global line_count
+    # Prepare the data to be sent
     data = {"lines_of_code": line_count}
-    with open("keystroke_data.json", "w") as json_file:
-        json.dump(data, json_file, indent=4)
+    try:
+        response = requests.post("http://127.0.0.1:8000/update-keystrokes", json=data)
+        if response.status_code == 200:
+            print(f"Keystroke data sent to API: {line_count} lines of code")
+        else:
+            print(f"Failed to send data to API: {response.status_code}")
+    except Exception as e:
+        print(f"Failed to send data to API: {e}")
+    line_count = 0  # Reset the line count after sending
 
-keyboard.on_press(count_newline)
+def collect_data():
+    while not stop_program:
+        time.sleep(send_interval)  # Wait for 30 seconds
+        send_data_to_api()  # Send the collected data every 30 seconds
 
-# Set a timer to stop data collection after 5 minutes (300 seconds)
-timer = Timer(30, stop_collection)
-timer.start()
+# Start the data collection process
+if __name__ == "__main__":
+    # Hook the keyboard events
+    keyboard.on_press(count_newline)
 
-# Keep the program running until `stop_program` is True
-while not stop_program:
-    time.sleep(1)
+    # Start the thread to send data every 30 seconds
+    data_thread = Thread(target=collect_data)
+    data_thread.start()
 
-# Save the data when the program ends
-#print(f"Lines of code typed: {line_count}")
-save_data_to_file()
+    # Set a timer to stop data collection after a certain period if needed
+    timer = Timer(30, stop_collection)  # Stop after 30 seconds (adjust as needed)
+    timer.start()
 
+    # Keep the program running until `stop_program` is True
+    while not stop_program:
+        time.sleep(1)
+
+    # Send the remaining data before stopping
+    send_data_to_api()

@@ -1,3 +1,271 @@
+# import asyncio
+# import websockets
+# import json
+# from pymongo import MongoClient
+# from datetime import datetime
+# from config import MONGO_URI
+# import logging
+# import os
+
+# # Set absolute path for log file
+# log_file_path = os.path.abspath('websocket_server.log')
+
+# # Configure logging
+# logging.basicConfig(
+#     filename=log_file_path,  # Absolute log file path
+#     level=logging.INFO,      # Log level
+#     format='%(asctime)s - %(levelname)s - %(message)s'
+# )
+
+# # MongoDB Connection
+# try:
+#     client = MongoClient(MONGO_URI)
+#     db = client["websocket_sessions"]
+#     print("Server Started. Database Connection Successful")
+#     logging.info("Database connection successful")
+# except Exception as e:
+#     logging.error(f"Failed to connect to MongoDB: {e}")
+#     exit(1)
+
+# connected_clients = set()
+
+
+# async def handle_connection(websocket, path):
+#     logging.info("Client connected")
+    
+#     try:
+#         # Receive the device_id and session_id from client
+#         message = await websocket.recv()
+#         logging.info("Message received from client")
+#         print("Message recieved from client")
+        
+#         data = json.loads(message)
+#         device_id = data.get('device_id')
+#         session_id = data.get('session_id')
+#         logging.info(f"Device ID: {device_id}, Session ID: {session_id}")
+
+        
+#         # Check if session_id already exists in MongoDB
+#         session = db.sessions.find_one({"session_id": session_id})
+        
+#         if session:
+#             logging.info("Session found, updating existing session")
+#             # Generate a new user_id for the new device/user
+#             user_id = max([user['user_id'] for user in session['users']], default=-1) + 1
+
+#             # Append device_id to the users list if it does not exist
+#             if not any(user['device_id'] == device_id for user in session['users']):
+#                 db.sessions.update_one(
+#                     {"session_id": session_id},
+#                     {"$push": {"users": {"device_id": device_id, "user_id": user_id, "intervals": []}}}
+#                 )
+#             response_message = "Session updated successfully"
+#         else:
+#             logging.info("Session not found, creating a new session")
+#             # Create a new session entry with user_id starting at 1
+#             user_id = 1
+#             new_session = {
+#                 "session_id": session_id,
+#                 "session_start": datetime.now().isoformat(),
+#                 "session_end": None,
+#                 "users": [
+#                     {"device_id": device_id, "user_id": user_id, "intervals": []}
+#                 ]
+#             }
+#             db.sessions.insert_one(new_session)
+#             response_message = "Session created successfully"
+
+#         # Send response to the client
+#         response = {
+#             "status": "success", 
+#             "message": response_message,
+#             "user_id": user_id  # Include user_id in the response
+#         }
+
+#         await websocket.send(json.dumps(response))
+#         logging.info("Response sent to client with user_id: %s", response.get("user_id", "N/A"))
+
+#         # Wait for further data from the client
+#         while True:
+#             try:
+#                 message = await websocket.recv()
+#                 logging.info("Data message received from client")
+#                 data = json.loads(message)
+
+#                 # Extract the relevant data
+#                 LOC = data.get('LOC')
+#                 rapport_score = data.get('rapport_score')
+#                 utterances_data = data.get('utterances_data')
+
+#                 if LOC is None or rapport_score is None or utterances_data is None:
+#                     logging.error("Error: Missing required fields in data message")
+#                     continue
+
+#                 # Update the user's data in MongoDB
+#                 update_result = db.sessions.update_one(
+#                     {"session_id": session_id, "users.device_id": device_id},
+#                     {"$set": {
+#                         "users.$.data": {
+#                             "LOC": LOC,
+#                             "rapport_score": rapport_score,
+#                             "utterances": utterances_data
+#                         }
+#                     }}
+#                 )
+#                 logging.info("Update result: %s", update_result.raw_result)  # Log update result
+
+#                 # Wait and check if user2_data is present
+#                 start_time = asyncio.get_event_loop().time()
+#                 timeout = 300  # 5 minute timeout
+
+#                 while True:
+#                     try:
+#                         # Retrieve data for the session from MongoDB
+#                         session = db.sessions.find_one({"session_id": session_id})
+#                         if session:
+#                             users_data = session.get("users", [])
+#                             # Identify if there is any other user's data in the session
+#                             user2_data = next((user for user in users_data if user.get("device_id") != device_id), None)
+
+#                             if user2_data:
+#                                 # User2 data is present, proceed to retrieve data for the users
+#                                 response_data = [user for user in users_data]
+#                                 response = {
+#                                     "status": "success",
+#                                     "message": "Data updated successfully",
+#                                     "users_data": response_data
+#                                 }
+#                                 await websocket.send(json.dumps(response))
+#                                 logging.info("Data updated in MongoDB and response sent to client")
+#                                 break
+#                         else:
+#                             # Handle the case where the session is not found
+#                             response = {
+#                                 "status": "error",
+#                                 "message": "Session not found"
+#                             }
+#                             await websocket.send(json.dumps(response))
+#                             logging.error("Session not found")
+#                             break
+
+#                         # Check if timeout has been reached
+#                         elapsed_time = asyncio.get_event_loop().time() - start_time
+#                         if elapsed_time >= timeout:
+#                             # Timeout reached, send an error message or handle accordingly
+#                             response = {
+#                                 "status": "error",
+#                                 "message": "Timeout waiting for user2 data"
+#                             }
+#                             await websocket.send(json.dumps(response))
+#                             logging.error("Timeout reached while waiting for user2 data")
+#                             break
+
+#                         # Wait for a short period before checking again
+#                         await asyncio.sleep(5)  # Check every 5 seconds
+
+#                     except Exception as e:
+#                         logging.error("Error in inner while loop: %s", e)
+#                         break
+
+#             except Exception as e:
+#                 logging.error("Error receiving or processing data: %s", e)
+#                 break
+
+#             # Receive and process interval data
+#             try:
+#                 message = await websocket.recv()
+#                 logging.info("Interval data message received from client")
+#                 data = json.loads(message)
+#                 device_id = data.get('device_id')
+#                 users_data = data.get('users', [])
+                
+#                 if not isinstance(users_data, list):
+#                     logging.error("Error: Invalid format for users_data")
+#                     continue
+                
+#                 for user_data in users_data:
+#                     if user_data.get('device_id') == device_id:
+#                         db.sessions.update_one(
+#                             {"session_id": session_id, "users.device_id": device_id},
+#                             {"$push": {
+#                                 "users.$.intervals": user_data.get('intervals', [])[-1]  # Append the new interval data
+#                             }}
+#                         )
+#                         break
+
+#                 # Send a confirmation back to the client
+#                 response = {
+#                     "status": "success",
+#                     "message": "Interval data updated successfully"
+#                 }
+#                 await websocket.send(json.dumps(response))
+#                 logging.info("Interval data updated in MongoDB and confirmation sent to client")
+
+#                  # Fetch the updated session data from MongoDB
+#                 session = db.sessions.find_one({"session_id": session_id})
+#                 if session:
+#                     users = session.get("users", [])
+#                     # Reorder users to have the current device first
+#                     current_user = next((user for user in users if user["device_id"] == device_id), None)
+#                     other_user = next((user for user in users if user["device_id"] != device_id), None)
+                    
+#                     if current_user and other_user:
+#                         # Prepare interval data to send back
+#                         interval_data = [
+#                             {
+#                                 "intervals": current_user["intervals"][-1:] if current_user["intervals"] else []
+#                             },
+#                             {
+#                                 "intervals": other_user["intervals"][-1:] if other_user["intervals"] else []
+#                             }
+#                         ]
+
+#                         # Send the interval data to the client
+#                         response = {
+#                             "status": "intervalData",
+#                             "message": "Latest interval data fetched and sent to client",
+#                             "interval_data": interval_data
+#                         }
+#                         await websocket.send(json.dumps(response))
+#                         logging.info("Latest interval data sent to client")
+
+#                 # Ensure the connection is closed after processing interval data
+#                 logging.info("Closing connection with the client")
+#                 await websocket.close()
+#                 break
+
+#             except Exception as e:
+#                 logging.error("Error processing interval data: %s", e)
+#                 break
+
+#     except websockets.exceptions.ConnectionClosedError as e:
+#         logging.error("Client connection closed with error: %s", e)
+#     except Exception as e:
+#         logging.error("Error in connection handler: %s", e)
+#     finally:
+#         if not websocket.closed:
+#             logging.info("Closing connection with the client")
+#             await websocket.close()
+
+# def print_clients():
+#     print("Connected Clients:", connected_clients)
+#     logging.info(f"Current Connected Clients: {len(connected_clients)}")
+
+# async def main():
+#     print("Starting server...")  # Debugging print
+#     logging.info("Starting server...")
+#     server = await websockets.serve(handle_connection, "localhost", 8765, ping_timeout=3000)
+#     logging.info("WebSocket server started on ws://localhost:8765")
+#     await server.wait_closed()
+
+# # Run the WebSocket server
+# try:
+#     asyncio.run(main())
+# except Exception as e:
+#     logging.error(f"Error running the server: {e}")
+#     print(f"Error running the server: {e}")
+
+
 utterances = [
     {
         "start_timestamp": 0.0,
@@ -224,3 +492,13 @@ def processed_data(utterances):
 # print(keystroke_data['lines_of_code'])
 
 print("inside test.py")
+
+import shutil
+import os
+
+cache_dir = os.path.expanduser('~\\AppData\\Local\\Temp\\tfhub_modules')
+if os.path.exists(cache_dir):
+    shutil.rmtree(cache_dir)
+    print("Cache cleared.")
+else:
+    print("Cache directory does not exist.")
