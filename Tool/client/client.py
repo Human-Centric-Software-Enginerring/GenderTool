@@ -10,7 +10,7 @@ import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from rapport_score import rapport_scorer
 
-
+timeframe = 0 
 def get_device_id():
     system = platform.system()
 
@@ -76,7 +76,7 @@ def interruptions(utterances1, utterances2):
         for event1 in utterances1:
             start1 = event1['start_timestamp']
             if event1['event'] == 'speech' and event2['event'] == 'speech' and start2 <= start1 <= end2:
-                print(event1)
+                #print(event1)
                 user1_interruptions += 1
     return user1_interruptions
 
@@ -110,9 +110,11 @@ def leadership(loc1,loc2,utterances1,utterances2):
     words1 = 0
     words2 =0
     for event1 in utterances1:
-        words1 += event1['words']
+        if event1['event'] == "speech":
+            words1 += event1['words']
     for event2 in utterances2:
-        words2 += event2['words']
+         if event2['event'] == "speech":
+            words2 += event2['words']
     L1 = (loc1/(loc1+loc2)) + (words1/(words1+words2))
     L2 = (loc2/(loc1+loc2)) + ((words2/words1+words2))
     if (L1-L2) > 1:
@@ -175,6 +177,8 @@ def trigger_scripts():
                 print(f"{script_name} failed with error: {e}")
 
 async def process_generated_data(websocket, device_id):
+    global timeframe
+    print("timeframe = ", timeframe)
     keystroke_data = requests.get("http://127.0.0.1:8000/get-keystrokes").json()
     face_detection_data = requests.get("http://127.0.0.1:8000/get-emotions").json()
     utterances_data = requests.get("http://127.0.0.1:8000/get-utterances").json()
@@ -214,6 +218,7 @@ async def process_generated_data(websocket, device_id):
     utterances1 = user1_data['data']['utterances']
     utterances2 = user2_data['data']['utterances']
     emotions1 = face_detection_data
+    timeframe += 1
     
     role_user1= determine_user_role(loc1, loc2)
     user1_interruptions = interruptions(utterances1, utterances2)
@@ -223,7 +228,7 @@ async def process_generated_data(websocket, device_id):
     
     # Store results in the corresponding user's interval data
     user1_data['intervals'].append({
-        "timeframe": 1, 
+        "timeframe": timeframe, 
         "loc": loc1,
         "rapport_score" : rapport,
         "role": role_user1,
@@ -234,7 +239,7 @@ async def process_generated_data(websocket, device_id):
     })
     updated_data = {
         "device_id": user1_data['device_id'],
-        "users": [user1_data]
+        "interval_data": [user1_data]
     }
     await websocket.send(json.dumps(updated_data))
     print("Updated interval data sent to the server")

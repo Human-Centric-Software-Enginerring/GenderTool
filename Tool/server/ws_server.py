@@ -497,7 +497,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
             elif 'interval_data' in data:
                 device_id = data.get('device_id')
-                users_data = data.get('users', [])
+                users_data = data.get('interval_data', [])
 
                 if not isinstance(users_data, list):
                     logging.error("Error: Invalid format for users_data")
