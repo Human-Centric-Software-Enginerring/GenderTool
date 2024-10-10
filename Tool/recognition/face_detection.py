@@ -44,7 +44,7 @@ class FaceDetection:
                     confidence = result[0]["emotion"][emotion]
 
                     # If the emotion changes, record the end time for the previous emotion
-                    if emotion != previous_emotion and confidence > 50:
+                    if emotion != previous_emotion and confidence > 80:
                         if previous_emotion is not None and emotion_start_time is not None:
                             emotion_end_time = time.time() - start_time
                             self.emotions.append({

@@ -352,17 +352,23 @@ client_sessions: Dict[str, Any] = {}
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
+    print("accepts websocket connection")
     connection_id = str(uuid.uuid4())
     connected_clients[connection_id] = websocket
     logging.info(f"Client connected: {connection_id}")
-    print(connected_clients)
 
     try:
         # First message to identify client and store connection
         message = await websocket.receive_text()
-        logging.info("Message received from client")
-        data = json.loads(message)
-
+        print("recieves first message from client")
+        logging.info("Message received from client", message)
+        # data = json.loads(message)
+        try:
+            data = json.loads(message)
+        except json.JSONDecodeError:
+            # If the parsing fails, the message is not JSON
+            print("Message is not JSON")
+        
         if 'device_id' in data and 'session_id' in data:
             device_id = data['device_id']
             session_id = data['session_id']
@@ -401,9 +407,9 @@ async def websocket_endpoint(websocket: WebSocket):
                 "user_id": user_id
             }
             await websocket.send_text(json.dumps(response))
-            logging.info(f"Response sent to client with user_id: {response.get('user_id', 'N/A')}")
+            logging.info(f"Response sent to client, user_id: {response.get('user_id', 'N/A')}")
 
-        elif 'message' in data and data['message'] == "Hello Server":
+        elif data["message"] == "Hello Server":
             logging.info("Received Hello Server message from extension")
             # Mark this connection as extension
             connected_clients[connection_id] = {"type": "extension", "websocket": websocket}
@@ -428,7 +434,7 @@ async def websocket_endpoint(websocket: WebSocket):
             data = json.loads(message)
 
             if 'LOC' in data and 'rapport_score' in data and 'utterances_data' in data:
-                LOC = data['LOC']
+                loc = data['LOC']
                 rapport_score = data['rapport_score']
                 utterances_data = data['utterances_data']
 
@@ -442,7 +448,7 @@ async def websocket_endpoint(websocket: WebSocket):
                     {"session_id": session_id, "users.device_id": device_id},
                     {"$set": {
                         "users.$.data": {
-                            "LOC": LOC,
+                            "LOC": loc,
                             "rapport_score": rapport_score,
                             "utterances": utterances_data
                         }
@@ -528,25 +534,29 @@ async def websocket_endpoint(websocket: WebSocket):
 
                     if current_user and other_user:
                         interval_data = [
-                            {
-                                "intervals": current_user["intervals"][-1:] if current_user["intervals"] else []
-                            },
-                            {
-                                "intervals": other_user["intervals"][-1:] if other_user["intervals"] else []
-                            }
+                                current_user["intervals"][-1] if current_user["intervals"] else {},
+                                other_user["intervals"][-1] if other_user["intervals"] else {}
                         ]
 
-                        # Send interval data to extension
-                        for conn_id, client in connected_clients.items():
-                            if isinstance(client, dict) and client.get("type") == "extension":
-                                ws = client["websocket"]
-                                response = {
+                        response = {
                                     "status": "intervalData",
                                     "message": "Latest interval data fetched and sent to extension",
                                     "interval_data": interval_data
-                                }
-                                await ws.send_text(json.dumps(response))
-                                logging.info("Latest interval data sent to extension")
+                        }
+                        await websocket.send_text(json.dumps(response))
+                        logging.info("Latest interval data sent to extension")
+
+                        # # Send interval data to extension
+                        # for conn_id, client in connected_clients.items():
+                        #     if isinstance(client, dict) and client.get("type") == "extension":
+                        #         ws = client["websocket"]
+                        #         response = {
+                        #             "status": "intervalData",
+                        #             "message": "Latest interval data fetched and sent to extension",
+                        #             "interval_data": interval_data
+                        #         }
+                        #         await ws.send_text(json.dumps(response))
+                        #         logging.info("Latest interval data sent to extension")
 
                 logging.info("Closing connection with the client")
                 await websocket.close()

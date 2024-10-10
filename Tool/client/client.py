@@ -44,7 +44,7 @@ def get_unix_device_id():
 # Helper functions
 def rapport_score(utterances):
     score = rapport_scorer(utterances)
-    return score
+    return round(score,2)
 
 def processed_utterance_data(utterances):
     processed_data = []
@@ -104,7 +104,9 @@ def self_efficacy(emotions):
             high += 1
         else:
             low += 1
-    return (high/(high+low)), (low/(low+high))
+    high_ratio = round((high/(high+low)),2)
+    low_ratio = round((low/(low+high)),2)
+    return high_ratio,low_ratio 
 
 def leadership(loc1,loc2,utterances1,utterances2):
     words1 = 0
