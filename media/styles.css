@@ -269,5 +269,55 @@ hr {
     100% { transform: rotate(360deg); }
 }
 
+.v8_108 {
+    color: rgba(183,244,183,1);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: Bold;
+    font-size: 32px;
+    opacity: 1;
+    text-align: center;
+}
+
+.v8_135 {
+    color: white;
+    font-size: 30px;
+}
+.v8_136 {
+    color:#C0F6FF;
+    font-size: 30px;
+    font-weight: bold;
+}
+.v8_137{
+    color: white;
+    font-size: 12px;
+}
+
+.icon-text-container {
+    display: flex;
+    align-items: center; /* Align icon with text vertically */
+    margin-bottom: 10px;
+}
+
+.icon-text-container img {
+    width: 60px; /* Icon width */
+    height: 60px; /* Icon height */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column; /*lign the secondary text (e.g., sample text) below */
+}
+
+.text-primary {
+    display: inline; /* Keep primary text (Role + Value) on the same line */
+}
+
+.text-secondary {
+    display: block; /* Make the secondary text appear on the next line */
+}
+
+
+
 
 

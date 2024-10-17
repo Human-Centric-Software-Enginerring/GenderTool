@@ -206,21 +206,48 @@
         console.log('Updating user stats with:', user1, user2);
         // Update stats for User 1
         document.getElementById('user1PrimaryContribution').textContent = user1.role;
+        driver_u1 = "You are actively writing most of the code.";
+        nav_u1 = "You are guiding the session. Focus on the direction and strategy for code writing.";
+        document.getElementById('user1PrimaryContributionTip').textContent = user1.role === "Driver" ? driver_u1 : nav_u1;
         document.getElementById('user1CommunicationStyle').textContent = user1.communication_style;
-        document.getElementById('user1SelfEfficacy').textContent = user1.self_efficacy[0] > user1.self_efficacy[1] ? "High" : "Low";
+        verbal_u1 = "You focused on clearly conveying your thoughts. Keep it up !";
+        nonVerbal_u1= "Remember to clearly communicate your thought process with your partner.";
+        document.getElementById('user1CommunicationStyleTip').textContent  = user1.communication_style === "Verbal" ? verbal_u1 : nonVerbal_u1;
+        user1SelfEff = user1.self_efficacy[0] > user1.self_efficacy[1] ? "High" : "Low";
+        document.getElementById('user1SelfEfficacy').textContent = user1SelfEff;
+        sfHigh_u1 = "You are being proactive and confident. Keep up with the high energy.";
+        sfLow_u1 = "While you may have benefited from your partner's input, it would be helpful to explore ways to build your own confidence and decision-making skills.";
+        document.getElementById('user1SelfEfficacyTip').textContent = user1SelfEff === "High" ? sfHigh_u1 : sfLow_u1;
         document.getElementById('user1Interruptions').textContent = user1.interruptions;
-        document.getElementById('user1Leasdership').textContent = user1.leadership;
+        document.getElementById('user1InterruptionsTip').textContent = "You interrupted your partner " + user1.interruptions + " times in last 5 minutes.";
+        document.getElementById('user1Leadership').textContent = user1.leadership;
+        auth_u1 = "You are confidently directing the session ensuring progress, however consider involving your partner in decision making.";
+        dem_u1 = "You are displaying a collaborative leadership style by involving your partner in decision-making. Keep it up!";
+        document.getElementById('user1LeadershipTip').textContent = user1.leadership === "Democratic" ? dem_u1 : auth_u1;
         rapport_u1a = "Keep up with building friendly connection with your partner but make sure you are focused on the task.";
         rapport_u1b = "Continue focusing on the task,but remember to be friendly with your partner to build connection.";
-        document.getElementById('user1Rapport').textContent = user1.rapport_score > 0.5 ? rapport_u1a : rapport_u1b;
+        document.getElementById('user1RapportTip').textContent = user1.rapport_score > 0.5 ? rapport_u1a : rapport_u1b;
     
         // Update stats for User 2
         document.getElementById('user2PrimaryContribution').textContent = user2.role;
+        driver_u2 = "Your partner is actively writing most of the code";
+        nav_u2= "Your partner is guiding the session effectively.";
+        document.getElementById('user2PrimaryContributionTip').textContent = user2.role === "Driver" ? driver_u2 : nav_u2;
+
         document.getElementById('user2CommunicationStyle').textContent = user2.communication_style;
-        document.getElementById('user2SelfEfficacy').textContent = user2.self_efficacy[0] > user2.self_efficacy[1] ? "High" : "Low";
+        verbal_u2= "Your partner is primarily communicating their thoughts verbally to ensure clarity.";
+        nonVerbal_u2= "Your partner is primarily communicating their thoughts through facial expressions.";
+        document.getElementById('user2CommunicationStyleTip').textContent = user2.communication_style === "Verbal" ?  verbal_u2 : nonVerbal_u2;
+
+        user2SelfEff = user2.self_efficacy[0] > user2.self_efficacy[1] ? "High" : "Low";
+        document.getElementById('user2SelfEfficacy').textContent = user2SelfEff;
+        sfHigh_u2 = "Your partner is proactive and has a positive mindset.";
+        sfLow_u2 = "Your partner is hesitant and is relying more on your guidance and validation.";
+        document.getElementById('user2SelfEfficacyTip').textContent = user2SelfEff === "High" ? sfHigh_u2 : sfLow_u2;
+
         rapport_u2a = "Your partner is making conversation with you and attempting to be friendly.";
-        rapport_u2b ="Your partner seems more invested in task than casual conversation";
-        document.getElementById('user2Rapport').textContent = user2.rapport_score > 0.5 ? rapport_u2a : rapport_u2b;
+        rapport_u2b ="Your partner seems more invested in task than casual conversation.";
+        document.getElementById('user2RapportTip').textContent = user2.rapport_score > 0.5 ? rapport_u2a : rapport_u2b;
         //Update session stats
         document.getElementById('sessionLOC').textContent = user1.loc + user2.loc;
     }

@@ -84,7 +84,7 @@ class GenderToolViewProvider {
         }
     }
     runTest2Script(sessionId) {
-        const scriptPath = 'D:/HCI_Research/GenderTool/Tool/recognition/test2.py';
+        const scriptPath = 'D:/HCI_Research/GenderTool/Tool/client/client.py';
         const command = `python "${scriptPath}" "${sessionId}"`;
         if (this._view) {
             this._view.webview.postMessage({ command: 'showProgress' });
@@ -168,28 +168,32 @@ class GenderToolViewProvider {
     }
     runPythonScripts() {
         // Start the WebSocket server
-        (0, child_process_1.exec)('python D:/HCI_Research/GenderTool/Tool/recognition/dummy.py', (error, stdout, stderr) => {
+        (0, child_process_1.exec)('python D:/HCI_Research/GenderTool/Tool/server/ws_server.py', (error, stdout, stderr) => {
             if (error) {
-                console.error(`Error executing dummy.py: ${error.message}`);
+                console.error(`Error executing ws_server.py: ${error.message}`);
                 return;
             }
             if (stderr) {
-                console.error(`Error in dummy.py: ${stderr}`);
+                console.error(`Error in ws_server.py: ${stderr}`);
             }
-            console.log(`Output from dummy.py: ${stdout}`);
+            console.log(`Output from ws_server.py: ${stdout}`);
         });
         // Delay to ensure WebSocket server is up and running
         setTimeout(() => {
             // Establish WebSocket connection to receive data from server
             try {
-                this.ws = new ws_1.default('ws://localhost:8765');
+                this.ws = new ws_1.default('ws://localhost:8000/ws');
+                //this.ws = new WebSocket('ws://localhost:8765');
                 this.ws.onopen = () => {
                     console.log('WebSocket connection established successfully with frontend.');
-                    this.ws?.send('Hello Server');
+                    this.ws?.send(JSON.stringify({
+                        type: "text",
+                        message: "Hello Server"
+                    }));
                     vscode.window.showInformationMessage('WebSocket connection established successfully!');
                 };
                 this.ws.onmessage = (event) => {
-                    console.log('Received data from server:', event.data);
+                    console.log('Received data from server:', event.data.toString());
                     vscode.window.showInformationMessage(`Received from server: ${event.data}`);
                     try {
                         const parsedData = JSON.parse(event.data.toString());
