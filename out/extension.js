@@ -128,39 +128,109 @@ class GenderToolViewProvider {
                 <div class="loading-icon"></div>
                 <p>Session started, reports will be displayed soon!</p>
             </div>
-            <div id="userStats" class="user-stats hidden">
-                <h1>Your Stats</h1>
-                <p> You worked primarily as <span id="user1PrimaryContribution"></span></p>
-                <p>Communication Style: <span id="user1CommunicationStyle"></span></p>
-                <p>Self Efficacy: <span id="user1SelfEfficacy"></span></p>
-                <p>Interruptions: <span id="user1Interruptions"></span></p>
-                <p>Leadership Style: <span id="user1Leasdership"></span></p>
-                <p>Rapport: <span id="user1Rapport"></span></p>
-                <h1>Partner's Stats</h1>
-                <p>Primary Contribution: <span id="user2PrimaryContribution"></span></p>
-                <p>Communication Style: <span id="user2CommunicationStyle"></span></p>
-                <p>Self Efficacy: <span id="user2SelfEfficacy"></span></p>
-                <p>Rapport: <span id="user2Rapport"></span></p>
-                <h1>Session Stats</h1>
-                <p>Total Lines of Code: <span id="sessionLOC"></span></p>
-                <button id="endSession" class="end-button">End Session</button>
-            </div>
-            <div id="finalStats" class="final-stats hidden">
-                <h1>Final Stats</h1>
-                <h1>Your Stats</h1>
-                <p> You worked primarily as <span id="user1FinalRole"></span></p>
-                <p>Communication Style: <span id="user1FinalComm"></span></p>
-                <p>Self Efficacy: <span id="user1FinalEfficacy"></span></p>
-                <p>Interruptions: <span id="user1FinalInterr"></span></p>
-                <p>Leadership Style: <span id="user1FinalLeadership"></span></p>
-                <p>Rapport: <span id="user1FinalRapport"></span></p>
-                <h1>Partner's Stats</h1>
-                <p>Primary Contribution: <span id="user2FinalRole"></span></p>
-                <p>Communication Style: <span id="user2FinalComm"></span></p>
-                <p>Self Efficacy: <span id="user2FinalEfficacy"></span></p>
-                <p>Rapport: <span id="user2FinalRapport"></span></p>
-                <h1>Session Stats</h1>
-                <p>Total Lines of Code: <span id="sessionFinalLOC"></span></p>
+
+            <div id="userStats" class="user-stats hidden scrollable-container">
+
+                <span class="v8_108">MY STATS</span><br>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v9_141.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Current Role: <span class="v8_136 text-primary" id="user1PrimaryContribution"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user1PrimaryContributionTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_180.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Communication Style: <span class="v8_136 text-primary" id="user1CommunicationStyle"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user1CommunicationStyleTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_192.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Self Efficacy: <span class="v8_136 text-primary" id="user1SelfEfficacy"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user1SelfEfficacyTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v9_147.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Interruptions: <span class="v8_136 text-primary" id="user1Interruptions"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user1InterruptionsTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v13_208.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Leadership: <span class="v8_136 text-primary" id="user1Leadership"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user1LeadershipTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v14_266.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Rapport:</span><br>
+                        <span class="v8_137 text-secondary" id="user1RapportTip"></span>
+                    </div>
+                </div>
+
+                 <span class="v8_108">PARTNER's STATS</span><br>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v9_141.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Current Role: <span class="v8_136 text-primary" id="user2PrimaryContribution"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user2PrimaryContributionTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_180.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Communication Style: <span class="v8_136 text-primary" id="user2CommunicationStyle"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user2CommunicationStyleTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_192.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Self Efficacy: <span class="v8_136 text-primary" id="user2SelfEfficacy"></span></span><br>
+                        <span class="v8_137 text-secondary" id="user2SelfEfficacyTip"></span>
+                    </div>
+                </div>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v14_266.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Rapport</span><br>
+                        <span class="v8_137 text-secondary" id="user2RapportTip"></span>
+                    </div>
+                </div>
+                
+                <span class="v8_108">SESSION STATS</span><br>
+                <div class="icon-text-container">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v13_242.png'))}" alt="Icon">
+                    <div class="text-group">
+                        <span class="v8_135 text-primary" >Total Lines of Code: <span class="v8_136 text-primary" id="sessionLOC"></span></span><br>
+                    </div>
+                </div>
+                    <button id="endSession" class="end-button">End Session</button>
+                </div>
+
+                <div id="finalStats" class="final-stats hidden">
+                    <h1>Final Stats</h1>
+                    <h1>Your Stats</h1>
+                    <p> You worked primarily as <span id="user1FinalRole"></span></p>
+                    <p>Communication Style: <span id="user1FinalComm"></span></p>
+                    <p>Self Efficacy: <span id="user1FinalEfficacy"></span></p>
+                    <p>Interruptions: <span id="user1FinalInterr"></span></p>
+                    <p>Leadership Style: <span id="user1FinalLeadership"></span></p>
+                    <p>Rapport: <span id="user1FinalRapport"></span></p>
+                    <h1>Partner's Stats</h1>
+                    <p>Primary Contribution: <span id="user2FinalRole"></span></p>
+                    <p>Communication Style: <span id="user2FinalComm"></span></p>
+                    <p>Self Efficacy: <span id="user2FinalEfficacy"></span></p>
+                    <p>Rapport: <span id="user2FinalRapport"></span></p>
+                    <h1>Session Stats</h1>
+                    <p>Total Lines of Code: <span id="sessionFinalLOC"></span></p>
             </div>
             <script nonce="${nonce}" src="${scriptUri}"></script>
         </body>

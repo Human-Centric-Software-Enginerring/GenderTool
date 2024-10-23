@@ -9,6 +9,17 @@ body {
     background-color: #000000; /* Black background */
     color: #ffffff; /* White text color */
     padding: 20px;
+    overflow:hidden;
+    /* overflow-y: auto;
+    overflow-x: auto; */
+}
+
+.scrollable-container {
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: auto; /* Disable horizontal scrolling */
+    max-height: 100vh; /* Restrict to viewport height */
+    width: 100%; /* Take full width */
+    padding-right: 20px; /* Add some padding for a nicer scroll experience */
 }
 
 h1 {
@@ -273,23 +284,32 @@ hr {
     color: rgba(183,244,183,1);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: Bold;
-    font-size: 32px;
+    font-size: 20px;
     opacity: 1;
     text-align: center;
+    margin-bottom: 15px;
+    align-content: center;
 }
 
 .v8_135 {
     color: white;
-    font-size: 30px;
+    font-size: 18px;
 }
 .v8_136 {
     color:#C0F6FF;
-    font-size: 30px;
+    font-size: 18px;
     font-weight: bold;
 }
 .v8_137{
     color: white;
     font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.img {
+    width: 20px; /* Icon width */
+    height: 20px; /* Icon height */
+    margin-right: 10px; /* Space between icon and text */
 }
 
 .icon-text-container {
@@ -299,8 +319,8 @@ hr {
 }
 
 .icon-text-container img {
-    width: 60px; /* Icon width */
-    height: 60px; /* Icon height */
+    width: 32px; /* Icon width */
+    height: 32x; /* Icon height */
     margin-right: 10px; /* Space between icon and text */
 }
 
@@ -315,9 +335,24 @@ hr {
 
 .text-secondary {
     display: block; /* Make the secondary text appear on the next line */
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
+.chart-container {
+    width: 150px;
+    margin: auto;
+    align-content: normal;
 
+}
+.chart-container canvas {
+    background-color: #222;
+}
+
+.chart-container2 {
+    width: 300px;
+    margin: auto;
+}
 
 
 

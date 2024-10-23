@@ -64,7 +64,10 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
     private sendEndSessionMessageToServer() {
         if (this.ws && this.ws.readyState === WebSocket.OPEN) {
             vscode.window.showInformationMessage(`Ending Session`);
-            this.ws.send('Endsession');
+            this.ws?.send(JSON.stringify({
+                type: "text",
+                message: "Hello Server"
+            }));
             console.log('Sent "Endsession" message to the server');
         } else {
             console.error('WebSocket is not open. Cannot send "Endsession" message.');
@@ -123,46 +126,46 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
                 <p>Session started, reports will be displayed soon!</p>
             </div>
 
-            <div id="userStats" class="user-stats hidden">
+            <div id="userStats" class="user-stats hidden scrollable-container">
 
                 <span class="v8_108">MY STATS</span><br>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v9_141.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v9_141.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Current Role: <span class="v8_136 text-primary" id="user1PrimaryContribution"></span></span><br>
                         <span class="v8_137 text-secondary" id="user1PrimaryContributionTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v10_180.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_180.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Communication Style: <span class="v8_136 text-primary" id="user1CommunicationStyle"></span></span><br>
                         <span class="v8_137 text-secondary" id="user1CommunicationStyleTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v10_192.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_192.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Self Efficacy: <span class="v8_136 text-primary" id="user1SelfEfficacy"></span></span><br>
                         <span class="v8_137 text-secondary" id="user1SelfEfficacyTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v9_147.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v9_147.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Interruptions: <span class="v8_136 text-primary" id="user1Interruptions"></span></span><br>
                         <span class="v8_137 text-secondary" id="user1InterruptionsTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v13_208.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v13_208.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Leadership: <span class="v8_136 text-primary" id="user1Leadership"></span></span><br>
                         <span class="v8_137 text-secondary" id="user1LeadershipTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v14_266.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v14_266.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Rapport:</span><br>
                         <span class="v8_137 text-secondary" id="user1RapportTip"></span>
@@ -171,28 +174,28 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
 
                  <span class="v8_108">PARTNER's STATS</span><br>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v9_141.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v9_141.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Current Role: <span class="v8_136 text-primary" id="user2PrimaryContribution"></span></span><br>
                         <span class="v8_137 text-secondary" id="user2PrimaryContributionTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v10_180.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_180.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Communication Style: <span class="v8_136 text-primary" id="user2CommunicationStyle"></span></span><br>
                         <span class="v8_137 text-secondary" id="user2CommunicationStyleTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v10_192.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v10_192.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Self Efficacy: <span class="v8_136 text-primary" id="user2SelfEfficacy"></span></span><br>
                         <span class="v8_137 text-secondary" id="user2SelfEfficacyTip"></span>
                     </div>
                 </div>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v14_266.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v14_266.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Rapport</span><br>
                         <span class="v8_137 text-secondary" id="user2RapportTip"></span>
@@ -201,7 +204,7 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
                 
                 <span class="v8_108">SESSION STATS</span><br>
                 <div class="icon-text-container">
-                    <img src="D:\\GenderTool\\media\\images\\v13_242.png" alt="Icon">
+                    <img src="${webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'media', 'images', 'v13_242.png'))}" alt="Icon">
                     <div class="text-group">
                         <span class="v8_135 text-primary" >Total Lines of Code: <span class="v8_136 text-primary" id="sessionLOC"></span></span><br>
                     </div>
