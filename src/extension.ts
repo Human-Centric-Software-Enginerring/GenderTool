@@ -66,7 +66,7 @@ class GenderToolViewProvider implements vscode.WebviewViewProvider {
             vscode.window.showInformationMessage(`Ending Session`);
             this.ws?.send(JSON.stringify({
                 type: "text",
-                message: "Hello Server"
+                message: "EndSession"
             }));
             console.log('Sent "Endsession" message to the server');
         } else {

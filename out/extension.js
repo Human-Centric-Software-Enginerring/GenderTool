@@ -76,7 +76,10 @@ class GenderToolViewProvider {
     sendEndSessionMessageToServer() {
         if (this.ws && this.ws.readyState === ws_1.default.OPEN) {
             vscode.window.showInformationMessage(`Ending Session`);
-            this.ws.send('Endsession');
+            this.ws?.send(JSON.stringify({
+                type: "text",
+                message: "EndSession"
+            }));
             console.log('Sent "Endsession" message to the server');
         }
         else {
