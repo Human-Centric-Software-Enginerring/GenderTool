@@ -144,7 +144,7 @@ async def connect_to_server(device_id, session_id):
             print(f"Stored user_id: {user_id}")
             
             # Trigger scripts
-            trigger_scripts()
+            await trigger_scripts()
 
             # Use the generated data
             await process_generated_data(websocket, device_id)
@@ -157,30 +157,34 @@ async def connect_to_server(device_id, session_id):
         print("Closing the WebSocket connection")
         await websocket.close()
 
-def trigger_scripts():
-    # Function to run scripts
+async def trigger_scripts():
     base_dir = "D:\\HCI_Research\\GenderTool\\Tool\\recognition"
-    def run_script(script_name):
-        script_path = os.path.join(base_dir, script_name)
-        os.system(f"python {script_path}")
-    
     scripts = ["keystroke.py", "face_detection.py", "utterances.py"]
+    tasks = []
 
-    # Use ThreadPoolExecutor to run scripts concurrently
-    with ThreadPoolExecutor(max_workers=len(scripts)) as executor:
-        futures = {executor.submit(run_script, script): script for script in scripts}
-        
-        for future in as_completed(futures):
-            script_name = futures[future]
-            try:
-                future.result()  # This will raise an exception if the script failed
-                print(f"{script_name} completed successfully.")
-            except Exception as e:
-                print(f"{script_name} failed with error: {e}")
+    for script_name in scripts:
+        script_path = os.path.join(base_dir, script_name)
+        # Create a task for each script
+        task = asyncio.create_subprocess_exec('python', script_path)
+        tasks.append(task)
+
+    # Wait for all scripts to complete concurrently
+    processes = await asyncio.gather(*tasks)  # This runs all tasks concurrently
+
+    # Check the return codes of all processes
+    for process, script_name in zip(processes, scripts):
+        return_code = await process.wait()  # Await each process to get its return code
+        if return_code == 0:
+            print(f"{script_name} completed successfully.")
+        else:
+            print(f"{script_name} failed with return code: {return_code}.")
 
 async def process_generated_data(websocket, device_id):
     global timeframe
-    print("timeframe = ", timeframe)
+    #while true: 
+        #continue loop from [line 189] --> [Line255]
+        #if message = interval data continue 
+        # else message = endession call generate_final_report and break
     keystroke_data = requests.get("http://127.0.0.1:8000/get-keystrokes").json()
     face_detection_data = requests.get("http://127.0.0.1:8000/get-emotions").json()
     utterances_data = requests.get("http://127.0.0.1:8000/get-utterances").json()
@@ -251,6 +255,16 @@ async def process_generated_data(websocket, device_id):
     intData = json.loads(interval_data)
     print("Interval data")
     print(intData)
+    finalMessage = await websocket.recv()
+    print("\n Final Message: " , finalMessage)
+
+async def generate_final_report():
+    # how to handle last interval? 1. get data (keystrokes,emotions,utterances) from API 2. stop data collection(scripts will send remaining data to api) 3. append this to data from (1)
+    # send it to database. get the same data for other user generate "interval_data" and send it to database
+    #fetch all interval data for both users. [this includes lastest generated interval data]
+    # process final stats and send it to server. 
+    pass
+
 
 def main():
     parser = argparse.ArgumentParser(description='Process session ID.')

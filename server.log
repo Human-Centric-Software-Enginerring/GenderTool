@@ -1,13 +1,55 @@
-2024-09-26 14:00:53,191 - INFO - Database connection successful
-2024-09-26 14:01:58,372 - INFO - Client connected: 87ad85f1-5a32-4f94-b794-0b039b7a8bd5
-2024-09-26 14:01:58,382 - INFO - Message received from client
-2024-09-26 14:01:58,382 - INFO - Client identified with connection_id: 87ad85f1-5a32-4f94-b794-0b039b7a8bd5, device_id: 10DEC04C-26D4-11B2-A85C-82FEA969117E, session_id: 009
-2024-09-26 14:01:59,838 - INFO - Session found, updating existing session
-2024-09-26 14:02:00,066 - INFO - Response sent to client with user_id: 2
-2024-09-26 14:03:29,030 - INFO - Data message received from client
-2024-09-26 14:03:29,254 - INFO - Update result: {'n': 1, 'electionId': ObjectId('7fffffff0000000000000073'), 'opTime': {'ts': Timestamp(1727373809, 8), 't': 115}, 'nModified': 1, 'ok': 1.0, '$clusterTime': {'clusterTime': Timestamp(1727373809, 8), 'signature': {'hash': b'\xc9\xc5>\x1f\xa1\x81\x95\xc0\x9di\x84\xba\r\x89\xe3k\x1c\x03w"', 'keyId': 7385505369973325828}}, 'operationTime': Timestamp(1727373809, 8), 'updatedExisting': True}
-2024-09-26 14:03:29,501 - INFO - Data updated in MongoDB and response sent to client
-2024-09-26 14:03:29,507 - INFO - Data message received from client
-2024-09-26 14:03:29,735 - INFO - Interval data updated in MongoDB and confirmation sent to client
-2024-09-26 14:03:29,954 - INFO - Closing connection with the client
-2024-09-26 14:03:29,959 - ERROR - Error closing websocket: Cannot call "send" once a close message has been sent.
+2024-10-23 13:04:55,769 - INFO - Database connection successful
+2024-10-23 13:05:13,899 - INFO - Client connected: f2245ed4-e4c7-4219-a200-730a980f270f
+2024-10-23 13:05:14,328 - INFO - Received Hello Server message from extension
+2024-10-23 13:05:14,329 - INFO - Response sent to extension
+2024-10-23 13:05:46,467 - INFO - Client connected: 7c9a5dbc-bca1-4b37-8614-bb940b284cca
+2024-10-23 13:05:46,499 - INFO - Client identified with connection_id: 7c9a5dbc-bca1-4b37-8614-bb940b284cca, device_id: 10DEC04C-26D4-11B2-A85C-82FEA969117E, session_id: 009
+2024-10-23 13:05:48,047 - INFO - Session found, updating existing session
+2024-10-23 13:05:48,048 - INFO - Response sent to client, user_id: 3
+2024-10-23 13:06:48,665 - ERROR - Client disconnected
+2024-10-23 13:06:48,665 - ERROR - Error closing websocket: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+2024-10-23 13:07:44,945 - ERROR - Client disconnected
+2024-10-23 13:07:44,945 - ERROR - Error closing websocket: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.
+2024-10-23 13:11:22,128 - INFO - Database connection successful
+2024-10-23 13:11:36,848 - INFO - Client connected: 1ca288c5-791e-41f7-89c7-c88596f9947f
+2024-10-23 13:11:36,876 - INFO - Message received from client
+2024-10-23 13:11:36,876 - INFO - Received Hello Server message from extension
+2024-10-23 13:11:36,877 - INFO - Response sent to extension
+2024-10-23 13:12:02,723 - INFO - Client connected: d851f5e0-d0bf-4a9d-beaf-94fc2d983481
+2024-10-23 13:12:02,729 - INFO - Message received from client
+2024-10-23 13:12:02,730 - INFO - Client identified with connection_id: d851f5e0-d0bf-4a9d-beaf-94fc2d983481, device_id: 10DEC04C-26D4-11B2-A85C-82FEA969117E, session_id: 009
+2024-10-23 13:12:04,528 - INFO - Session found, updating existing session
+2024-10-23 13:12:04,529 - INFO - Response sent to client, user_id: 3
+2024-10-23 13:13:06,133 - INFO - Data message received from client
+2024-10-23 13:13:06,358 - INFO - Update result: {'n': 1, 'electionId': ObjectId('7fffffff000000000000007c'), 'opTime': {'ts': Timestamp(1729703586, 5), 't': 124}, 'nModified': 1, 'ok': 1.0, '$clusterTime': {'clusterTime': Timestamp(1729703586, 5), 'signature': {'hash': b'u\xc7\x8b\xc1\xdb\xe6\xfc#\xe1T\x92\xb9{S\x9d\xa8\xafz]\xd3', 'keyId': 7385505369973325828}}, 'operationTime': Timestamp(1729703586, 5), 'updatedExisting': True}
+2024-10-23 13:13:06,639 - INFO - Data updated in MongoDB and response sent to client
+2024-10-23 13:13:06,640 - INFO - Data message received from client
+2024-10-23 13:13:06,857 - INFO - Interval data updated in MongoDB and confirmation sent to client
+2024-10-23 13:13:07,073 - INFO - Latest interval data sent to extension
+2024-10-23 13:13:07,074 - INFO - Latest interval data sent to extension
+2024-10-23 13:13:38,057 - INFO - Data message received from client
+2024-10-23 13:13:38,057 - ERROR - Error in connection handler: Expecting value: line 1 column 1 (char 0)
+2024-10-23 13:13:38,059 - INFO - Connection closed with the client
+2024-10-23 13:20:55,724 - INFO - Database connection successful
+2024-10-23 13:21:45,086 - INFO - Database connection successful
+2024-10-23 13:21:53,954 - INFO - Client connected: 17e27798-ac6d-4e11-9b54-cce732dba33e
+2024-10-23 13:21:54,515 - INFO - Message received from client
+2024-10-23 13:21:54,515 - INFO - Received Hello Server message from extension
+2024-10-23 13:21:54,515 - INFO - Response sent to extension
+2024-10-23 13:22:26,971 - INFO - Client connected: c386a03b-f170-4bc1-8efd-1ba7ae24f917
+2024-10-23 13:22:26,972 - INFO - Message received from client
+2024-10-23 13:22:26,972 - INFO - Client identified with connection_id: c386a03b-f170-4bc1-8efd-1ba7ae24f917, device_id: 10DEC04C-26D4-11B2-A85C-82FEA969117E, session_id: 009
+2024-10-23 13:22:28,341 - INFO - Session found, updating existing session
+2024-10-23 13:22:28,341 - INFO - Response sent to client, user_id: 3
+2024-10-23 13:23:29,411 - INFO - Data message received from client
+2024-10-23 13:23:29,640 - INFO - Update result: {'n': 1, 'electionId': ObjectId('7fffffff000000000000007c'), 'opTime': {'ts': Timestamp(1729704209, 8), 't': 124}, 'nModified': 1, 'ok': 1.0, '$clusterTime': {'clusterTime': Timestamp(1729704209, 8), 'signature': {'hash': b'\x9c\x18\x7f\xef\xd9x\xc1\x0f\xd0\x19\xfc\xf7\xcb\xba\xbb\xb1o\xb7\x85\xbb', 'keyId': 7385505369973325828}}, 'operationTime': Timestamp(1729704209, 8), 'updatedExisting': True}
+2024-10-23 13:23:29,969 - INFO - Data updated in MongoDB and response sent to client
+2024-10-23 13:23:29,971 - INFO - Data message received from client
+2024-10-23 13:23:30,254 - INFO - Interval data updated in MongoDB and confirmation sent to client
+2024-10-23 13:23:30,561 - INFO - Latest interval data sent to extension
+2024-10-23 13:23:30,563 - INFO - Latest interval data sent to extension
+2024-10-23 13:23:40,742 - INFO - Data message received from client
+2024-10-23 13:23:40,742 - ERROR - Error in connection handler: cannot access local variable 'session_id' where it is not associated with a value
+2024-10-23 13:23:40,744 - INFO - Connection closed with the client
+2024-10-23 13:24:12,047 - ERROR - Client disconnected
+2024-10-23 13:24:12,047 - ERROR - Error closing websocket: Unexpected ASGI message 'websocket.close', after sending 'websocket.close' or response already completed.

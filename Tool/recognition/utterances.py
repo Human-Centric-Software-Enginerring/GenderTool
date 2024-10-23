@@ -116,8 +116,12 @@ def gather_audio_and_process(duration):
         # Sort results by start_timestamp
         results.sort(key=lambda x: x['start_timestamp'])
 
-        # Send the transcriptions to the server every 5 minutes
+        # Send the transcriptions to the server every 'x'seconds. Currently, 30 secs. 
         send_transcriptions_to_server(results)
+
+        #write results to a file
+        # with open('utterances_result.json', 'w') as f:
+        #     json.dump(results, f, indent=4)
 
         # Remove the audio file after transcription
         os.remove(segment_filename)
@@ -140,7 +144,8 @@ def save_audio(frames, rate, output_filename):
 
 # Function to transcribe audio using Whisper
 def transcribe_audio(audio_filename):
-    result = model.transcribe(audio_filename)
+    #result = model.transcribe(audio_filename)
+    result = model.transcribe(audio_filename, language='en', beam_size=1)
     return result
 
 # Function to detect non-verbal sounds using YAMNet
@@ -181,7 +186,7 @@ def send_transcriptions_to_server(transcriptions):
     Send the transcriptions to the existing FastAPI server.
     """
     try:
-        url = "http://127.0.0.1:8000/update-utterances"  # Replace with your actual endpoint
+        url = "http://127.0.0.1:8000/update-utterances"  
         response = requests.post(url, json=transcriptions)
         if response.status_code != 200:
             print(f"Failed to send transcriptions. Server response: {response.status_code} - {response.text}")

@@ -9,12 +9,25 @@ line_count = 0
 stop_program = False
 send_interval = 30  # 30 seconds
 
-def count_newline(event):
+def count_keypress(event):
     global line_count
     # Check if the active window is Visual Studio Code
-    if "Visual Studio Code" in GetWindowText(GetForegroundWindow()):
+    window_title = GetWindowText(GetForegroundWindow())
+    if "Visual Studio Code" in window_title:
         if event.name == 'enter':
-            line_count += 1
+            line_count += 1  # Increment for 'enter'
+        elif event.name == 'backspace':
+            line_count -= 1  # Decrement for 'backspace'
+        else:
+            # List of keys to ignore
+            ignore_keys = ['tab', 'caps lock', 'ctrl', 'windows', 'alt', 'esc', 
+                           'shift', 'left shift', 'right shift', 'up', 'down', 
+                           'left', 'right', 'page up', 'page down', 'home', 
+                           'end', 'fn','space']
+            
+            # Count other keypresses as characters typed, excluding specified keys
+            if len(event.name) == 1 and event.name not in ignore_keys:
+                line_count += 1
 
 def stop_collection():
     global stop_program
@@ -28,7 +41,7 @@ def send_data_to_api():
     try:
         response = requests.post("http://127.0.0.1:8000/update-keystrokes", json=data)
         if response.status_code == 200:
-            print(f"Keystroke data sent to API: {line_count} lines of code")
+            print(f"Keystroke data sent to API: {line_count} characters")
         else:
             print(f"Failed to send data to API: {response.status_code}")
     except Exception as e:
@@ -43,19 +56,20 @@ def collect_data():
 # Start the data collection process
 if __name__ == "__main__":
     # Hook the keyboard events
-    keyboard.on_press(count_newline)
+    keyboard.on_press(count_keypress)
 
     # Start the thread to send data every 30 seconds
     data_thread = Thread(target=collect_data)
     data_thread.start()
 
     # Set a timer to stop data collection after a certain period if needed
-    timer = Timer(30, stop_collection)  # Stop after 30 seconds (adjust as needed)
+    timer = Timer(60, stop_collection)  # Stop after 30 seconds (adjust as needed)
     timer.start()
 
     # Keep the program running until `stop_program` is True
     while not stop_program:
         time.sleep(1)
 
+    #print(line_count)
     # Send the remaining data before stopping
-    send_data_to_api()
+    #send_data_to_api()
